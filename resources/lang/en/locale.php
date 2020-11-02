@@ -1,6 +1,9 @@
 <?php
 return [
   "Dashboard" => "Dashboard",
+  "Category" => "Category",
+  "Brand" => "Brand",
+  "Product" => "Product",
   "eCommerce" => "eCommerce",
   "Analytics" => "Analytics",
   "Apps" => "Apps",
