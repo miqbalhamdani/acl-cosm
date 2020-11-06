@@ -7,6 +7,8 @@
     @else
     <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/vendors-rtl.min.css')}}">
     @endif
+
+    <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/tables/datatable/datatables.min.css')}}">
     @yield('vendor-styles')
     <!-- END: Vendor CSS-->
 

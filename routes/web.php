@@ -26,4 +26,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']] , function()
     Route::get('/', function() {
         return view('admin.dashboard');
     });
+
+    /*
+    |--------------------------------------------------------------------------
+    | BRAND
+    |--------------------------------------------------------------------------
+    */
+    Route::get('brand', 'BrandsController@index');
+    Route::get('brand/add', 'BrandsController@store');
+    Route::post('brand/add', 'BrandsController@store');
+    Route::get('brand/edit/{id}', 'BrandsController@store');
+    Route::post('brand/edit/{id}', 'BrandsController@store');
+    Route::get('brand/delete/{id}', 'BrandsController@destroy');
 });
