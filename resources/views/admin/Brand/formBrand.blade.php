@@ -47,6 +47,7 @@
                       type="text"
                       class="form-control"
                       name="brand_name"
+                      value="{{ @$collection['name'] }}"
                       placeholder="Brand Name"
                       autocomplete="off"
                       required

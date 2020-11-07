@@ -19,35 +19,36 @@
 
       <div class="card-content">
         <div class="card-body">
-          <table class="table" id="brandDatatable">
-            <thead>
-              <tr>
-                <th>Brand Name</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach ($collection as $item)
-              <tr>
-                <td>{{ $item->name }}</td>
-              </tr>
-              @endforeach
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table mb-0">
+              <thead>
+                <tr>
+                  <th>{{ $title }} Name</th>
+                  <th></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                @foreach ($collection as $item)
+                  <tr>
+                    <td>{{ $item->name }}</td>
+                    <td class="w-150">
+                      <a href="{{ URL('/admin/brand/edit/'. $item->id) }}">
+                        <i class="badge-circle badge-circle-secondary bx bx-edit font-medium-1"></i>
+                      </a>
+
+                      <a href="#" onclick="deleteItem('/admin/brand', {{ $item->id }})">
+                        <i class="badge-circle badge-circle-secondary bx bx-trash font-medium-1"></i>
+                      </a>
+                    </td>
+                  </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-@endsection
-
-@section('page-scripts')
-<script>
-$(function() {
-  $("#brandDatatable").DataTable({
-    paging: false,
-    info: false,
-    searching: false,
-  });
-});
-</script>
 @endsection

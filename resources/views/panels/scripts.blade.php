@@ -9,8 +9,8 @@
     <script src="{{asset('fonts/LivIconsEvo/js/LivIconsEvo.min.js')}}"></script>
 
     <!-- dataTable -->
-    <script src="{{asset('vendors/js/tables/datatable/datatables.min.js')}}"></script>
-    <script src="{{asset('vendors/js/tables/datatable/dataTables.bootstrap4.min.js')}}"></script>
+    {{-- <script src="{{asset('vendors/js/tables/datatable/datatables.min.js')}}"></script>
+    <script src="{{asset('vendors/js/tables/datatable/dataTables.bootstrap4.min.js')}}"></script> --}}
 
     <!-- Select2 -->
     <script src="{{asset('vendors/js/forms/select/select2.full.min.js')}}"></script>

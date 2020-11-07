@@ -74,18 +74,11 @@ class BrandsController extends Controller
             }
         }
 
-        $pageConfigs = [
-            'isContentSidebar' => 'true',
-            'pageHeader' => 'true',
-            'navbarBgColor' => 'bg-success',
-        ];
-
         $data = [
             'title' => $this->title,
             'collection' => $collection,
             'error_message' => $error_message,
             'input' => $request->input(),
-            'pageConfigs' => $pageConfigs,
         ];
 
         return view('admin.brand.formBrand', $data);
