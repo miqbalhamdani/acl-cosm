@@ -38,4 +38,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']] , function()
     Route::get('brand/edit/{id}', 'BrandsController@store');
     Route::post('brand/edit/{id}', 'BrandsController@store');
     Route::get('brand/delete/{id}', 'BrandsController@destroy');
+
+    /*
+    |--------------------------------------------------------------------------
+    | CATEGORY
+    |--------------------------------------------------------------------------
+    */
+    Route::get('category', 'CategoryController@index');
+    Route::get('category/add', 'CategoryController@store');
+    Route::post('category/add', 'CategoryController@store');
+    Route::get('category/edit/{id}', 'CategoryController@store');
+    Route::post('category/edit/{id}', 'CategoryController@store');
+    Route::get('category/delete/{id}', 'CategoryController@destroy');
 });

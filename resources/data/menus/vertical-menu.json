@@ -1,25 +1,25 @@
 {
   "menu": [
     {
-      "url": "/",
+      "url": "/admin/",
       "name": "Dashboard",
       "i18n": "Dashboard",
       "icon": "desktop"
     },
     {
-      "url": "/category",
+      "url": "/admin/category",
       "name": "Category",
       "i18n": "Category",
       "icon": "pie-chart"
     },
     {
-      "url": "/brand",
+      "url": "/admin/brand",
       "name": "Brand",
       "i18n": "Brand",
       "icon": "paper-plane"
     },
     {
-      "url": "/product",
+      "url": "/admin/product",
       "name": "Product",
       "i18n": "Product",
       "icon": "list"

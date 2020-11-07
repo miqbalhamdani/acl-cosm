@@ -8,7 +8,15 @@
     <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/vendors-rtl.min.css')}}">
     @endif
 
+    <!-- dataTable -->
     <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/tables/datatable/datatables.min.css')}}">
+
+    <!-- Select2 -->
+    <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/forms/select/select2.min.css')}}">
+
+    <!-- Sweet Alerts -->
+    <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/extensions/sweetalert2.min.css')}}">
+
     @yield('vendor-styles')
     <!-- END: Vendor CSS-->
 

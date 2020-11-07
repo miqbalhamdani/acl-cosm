@@ -8,8 +8,16 @@
     <script src="{{asset('fonts/LivIconsEvo/js/LivIconsEvo.defaults.js')}}"></script>
     <script src="{{asset('fonts/LivIconsEvo/js/LivIconsEvo.min.js')}}"></script>
 
+    <!-- dataTable -->
     <script src="{{asset('vendors/js/tables/datatable/datatables.min.js')}}"></script>
     <script src="{{asset('vendors/js/tables/datatable/dataTables.bootstrap4.min.js')}}"></script>
+
+    <!-- Select2 -->
+    <script src="{{asset('vendors/js/forms/select/select2.full.min.js')}}"></script>
+
+    <!-- Sweet Alerts -->
+    <script src="{{asset('vendors/js/extensions/sweetalert2.all.min.js')}}"></script>
+
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
@@ -28,6 +36,9 @@
     <script src="{{asset('js/scripts/footer.js')}}"></script>
     <script src="{{asset('js/scripts/customizer.js')}}"></script>
     <!-- END: Theme JS-->
+
+    <!-- COMMON JS-->
+    <script src="{{asset('js/scripts/common.js')}}"></script>
 
     <!-- BEGIN: Page JS-->
     @yield('page-scripts')
