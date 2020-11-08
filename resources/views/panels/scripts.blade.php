@@ -18,7 +18,10 @@
     <!-- Sweet Alerts -->
     <script src="{{asset('vendors/js/extensions/sweetalert2.all.min.js')}}"></script>
 
-    <!-- BEGIN Vendor JS-->
+    <!-- Dropzone -->
+    <script src="{{asset('vendors/js/extensions/dropzone.min.js')}}"></script>
+
+    <!-- END Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
     @yield('vendor-scripts')

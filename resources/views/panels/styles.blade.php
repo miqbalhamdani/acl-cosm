@@ -17,6 +17,10 @@
     <!-- Sweet Alerts -->
     <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/extensions/sweetalert2.min.css')}}">
 
+    <!-- Dropzone -->
+    <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/file-uploaders/dropzone.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/plugins/file-uploaders/dropzone.css')}}">
+
     @yield('vendor-styles')
     <!-- END: Vendor CSS-->
 

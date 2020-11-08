@@ -49,5 +49,21 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']] , function()
     Route::post('category/add', 'CategoryController@store');
     Route::get('category/edit/{id}', 'CategoryController@store');
     Route::post('category/edit/{id}', 'CategoryController@store');
-    Route::get('category/delete/{id}', 'CategoryController@destroy');
+
+    /*
+    |--------------------------------------------------------------------------
+    | PRODUCT
+    |--------------------------------------------------------------------------
+    */
+    Route::get('product', 'ProductController@index');
+    Route::get('product/add', 'ProductController@store');
+    Route::post('product/add', 'ProductController@store');
+    Route::get('product/edit/{id}', 'ProductController@store');
+    Route::post('product/edit/{id}', 'ProductController@store');
+    Route::get('product/delete/{id}', 'ProductController@destroy');
+
+    // Upload image by Dropzone
+    Route::post('product/images/upload', 'ProductController@uploadImage');
+    Route::post('product/images/remove', 'ProductController@removeImage');
+
 });
