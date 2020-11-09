@@ -33,36 +33,36 @@
 @endsection
 
 @section('content')
-<section id="admin-brand-form">
+<section id="product">
   <div class="col-md-12 col-12">
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-title">{{ $title }}</h4>
-      </div>
+    <form
+      class="form form-vertical"
+      method="POST"
+      action="{{ URL(setPostUrl()) }}"
+      enctype="multipart/form-data"
+    >
+      {{ csrf_field() }}
 
-      <div class="card-content">
-        <div class="card-body">
-          @if (@$error_message)
-          <div class="alert border-danger alert-dismissible mb-2" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-            <div class="d-flex align-items-center">
-              <i class="bx bx-error"></i>
-              <span>
-                {{ $error_message }}
-              </span>
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">{{ $title }}</h4>
+        </div>
+
+        <div class="card-content">
+          <div class="card-body">
+            @if (@$error_message)
+            <div class="alert border-danger alert-dismissible mb-2" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+              <div class="d-flex align-items-center">
+                <i class="bx bx-error"></i>
+                <span>
+                  {{ $error_message }}
+                </span>
+              </div>
             </div>
-          </div>
-          @endif
-
-          <form
-            class="form form-vertical"
-            method="POST"
-            action="{{ URL(setPostUrl()) }}"
-            enctype="multipart/form-data"
-          >
-            {{ csrf_field() }}
+            @endif
 
             <!-- BEGIN: Dropzone -->
             <input
@@ -99,24 +99,24 @@
 
                 <div class="col-12">
                   <div class="form-group">
-                    <label for="first-name-vertical">
+                    <label for="product-name">
                       Product Name
                     </label>
                     <input
                       type="text"
+                      id="product-name"
                       class="form-control"
                       name="product_name"
                       value="{{ @$collection['name'] }}"
                       placeholder="Product Name"
                       autocomplete="off"
-                      required
                     >
                   </div>
                 </div>
 
                 <div class="col-6">
                   <div class="form-group">
-                    <label for="first-name-vertical">
+                    <label for="product-brand">
                       Brand Name
                     </label>
 
@@ -124,6 +124,7 @@
                       <select
                         data-placeholder="Select a brand..."
                         class="select2-brand form-control"
+                        id="product-brand"
                         name="brand"
                       >
                         @foreach ($brands as $item)
@@ -143,7 +144,7 @@
 
                 <div class="col-6">
                   <div class="form-group">
-                    <label for="first-name-vertical">
+                    <label for="product-category">
                       Category Name
                     </label>
 
@@ -151,6 +152,7 @@
                       <select
                         data-placeholder="Select a category..."
                         class="select2-category form-control"
+                        id="product-category"
                         name="category"
                       >
                         @foreach ($categories as $item)
@@ -185,42 +187,56 @@
 
                 <div class="col-12">
                   <div class="form-group">
-                    <label for="first-name-vertical">
+                    <label for="product-description">
                       Product Description
                     </label>
                     <fieldset class="form-group">
                       <textarea
                         rows="4"
                         class="form-control"
+                        id="product-description"
                         name="description"
-                        value="{{ @$collection['description'] }}"
                         placeholder="Product Description"
-                      ></textarea>
+                      >{{ @$collection['description'] }}
+                      </textarea>
                     </fieldset>
                   </div>
                 </div>
-
-                <div class="col-12 d-flex justify-content-end">
-                  <button
-                    type="submit"
-                    class="btn btn-primary mr-1 mb-1"
-                  >
-                    Save
-                  </button>
-
-                  <a
-                    href="{{ URL('admin/brand') }}"
-                    class="btn btn-light-secondary mb-1"
-                  >
-                    Cancel
-                  </a>
-                </div>
               </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
-    </div>
+
+      {{-- PRODUCT VARIANT --}}
+      @php
+        $variantCollection = @$collection['variants'] ? json_encode(json_decode($collection['variants'])) : json_encode([]);
+        $sizeCollection = @$collection['variant_size'] ? json_encode(explode(',', $collection['variant_size'])) : json_encode([]);
+      @endphp
+      <product-variant
+        id="{{ $collection['id'] }}"
+        slug="{{ $collection['slug'] }}"
+        :arr-size="{{ $sizeCollection }}"
+        :variants="{{ $variantCollection }}"
+      >
+      </product-variant>
+
+      <div class="col-12 d-flex justify-content-end">
+        <button
+          type="submit"
+          class="btn btn-primary mr-1 mb-1"
+        >
+          Save
+        </button>
+
+        <a
+          href="{{ URL('admin/product') }}"
+          class="btn btn-light mb-1"
+        >
+          Cancel
+        </a>
+      </div>
+    </form>
   </div>
 </section>
 @endsection

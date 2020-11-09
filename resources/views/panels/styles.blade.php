@@ -45,6 +45,10 @@
     @yield('page-styles')
     <!-- END: Page CSS-->
 
+    <!-- BEGIN: Laravel Vue-->
+    <link rel="stylesheet" type="text/css" href="{{asset('vue/css/app.css')}}">
+    <!-- END: Laravel Vue-->
+
     <!-- BEGIN: Custom CSS-->
     @if($configData['direction'] === 'ltr')
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">

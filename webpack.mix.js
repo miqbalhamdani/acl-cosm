@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 const exec = require('child_process').exec;
+const Dotenv = require('dotenv-webpack');
 require('dotenv').config();
 
 /*
@@ -99,4 +100,38 @@ mix.then(() => {
 //     });
 //     mix.setResourceRoot("/materialize-material-design-admin-template/laravel/demo-1/");
 // }
-mix.version();
+
+if (mix.inProduction()) {
+    mix.version();
+    mix.disableNotifications();
+    mix.webpackConfig({
+        devtool: false,
+    });
+} else {
+    mix.sourceMaps();
+    mix.webpackConfig({
+        devtool: 'cheap-source-map',
+    });
+}
+
+mix.js('resources/js/app.js', 'public/vue/js')
+    .sass('resources/sass/app.scss', 'public/vue/css');
+
+mix.extract();
+
+mix.webpackConfig({
+    resolve: {
+        alias: {
+            '~': path.join(__dirname, './resources/js'),
+            '@': path.join(__dirname, './resources/js/components')
+        }
+    },
+    plugins: [
+        new Dotenv({
+            silent: true
+        }),
+        // new BundleAnalyzerPlugin({
+        //   openAnalyzer: false,
+        // }),
+    ],
+});

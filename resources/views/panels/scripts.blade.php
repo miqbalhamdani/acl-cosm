@@ -40,6 +40,11 @@
     <script src="{{asset('js/scripts/customizer.js')}}"></script>
     <!-- END: Theme JS-->
 
+    <!-- Laravel Vue -->
+    <script src="{{ mix('vue/js/manifest.js') }}"></script>
+    <script src="{{ mix('vue/js/vendor.js') }}"></script>
+    <script src="{{ mix('vue/js/app.js') }}"></script>
+
     <!-- COMMON JS-->
     <script src="{{asset('js/scripts/common.js')}}"></script>
 

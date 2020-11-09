@@ -79,12 +79,13 @@ class ProductController extends Controller
                 ];
 
                 if ($request->input('images')) {
-                    $slug = ($id) ? $collection['slug'] : Str::slug($request->input('name'));
+                    $slug = ($id) ? $collection['slug'] : Str::slug($request->input('product_name'));
 
                     // move image from temp to gallery
                     $temp = public_path($this->temp) .'/';
                     $gallery = public_path($this->path) .'/'. $slug .'/';
                     $images = explode(',', $request->input('images'));
+                    $sizeImages = explode(',', $request->input('sizeImages'));
 
                     // create image forlder
                     \File::exists($gallery) or \File::makeDirectory($gallery);
@@ -96,13 +97,23 @@ class ProductController extends Controller
                             \File::move($temp . $images[$i], $gallery . $images[$i]);
                         }
                     }
+
+                    for ($i = 0; $i < count($sizeImages); $i++)
+                    {
+                        if(\File::isFile($temp . $sizeImages[$i]))
+                        {
+                            \File::move($temp . $sizeImages[$i], $gallery . $sizeImages[$i]);
+                        }
+                    }
+
+                    $data['images'] = $request->input('images');
                 }
 
                 if ($id) {
                     $insert = $this->model->update($id, $data);
                     $message = 'Product successfully changed.';
                 } else {
-                    $data['slug'] = Str::slug($request->input('name'));
+                    $data['slug'] = Str::slug($request->input('product_name'));
                     $insert = $this->model->create($data);
                     $message = 'Product successfully added.';
                 }
@@ -130,10 +141,16 @@ class ProductController extends Controller
      */
     public function uploadImage(Request $request)
     {
+        $name = $request->name;
         $image = $request->file('file');
         $path = public_path($this->temp);
-        $rand  = date('dmy.His') .'.'. uniqid();
-        $name = strtoupper($rand) .'.'. $image->extension();
+
+        if ($name) {
+            $name = $name .'.'. $image->getClientOriginalExtension();
+        } else {
+            $rand  = date('dmy.His') .'.'. uniqid();
+            $name = strtoupper($rand) .'.'. $image->extension();
+        }
 
         $image->move($path, $name);
 
