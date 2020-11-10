@@ -20,6 +20,11 @@ Route::get('/ecommerce', 'AccessController@home')->middleware('role:Admin');
 
 Auth::routes();
 
+// frontend
+Route::get('/', 'FrontendController@index');
+Route::get('/products', 'FrontendController@list');
+Route::get('/products/{slug}', 'FrontendController@detail');
+
 // dashboard Routes
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']] , function()
 {
