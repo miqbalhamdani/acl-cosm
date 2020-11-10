@@ -7,6 +7,20 @@
     @else
     <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/vendors-rtl.min.css')}}">
     @endif
+
+    <!-- dataTable -->
+    {{-- <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/tables/datatable/datatables.min.css')}}"> --}}
+
+    <!-- Select2 -->
+    <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/forms/select/select2.min.css')}}">
+
+    <!-- Sweet Alerts -->
+    <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/extensions/sweetalert2.min.css')}}">
+
+    <!-- Dropzone -->
+    <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/file-uploaders/dropzone.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/plugins/file-uploaders/dropzone.css')}}">
+
     @yield('vendor-styles')
     <!-- END: Vendor CSS-->
 
@@ -30,6 +44,10 @@
     @endif
     @yield('page-styles')
     <!-- END: Page CSS-->
+
+    <!-- BEGIN: Laravel Vue-->
+    <link rel="stylesheet" type="text/css" href="{{asset('vue/css/app.css')}}">
+    <!-- END: Laravel Vue-->
 
     <!-- BEGIN: Custom CSS-->
     @if($configData['direction'] === 'ltr')

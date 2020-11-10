@@ -1,64 +1,28 @@
 {
   "menu": [
     {
-      "url": "/",
+      "url": "/admin/",
       "name": "Dashboard",
       "i18n": "Dashboard",
-      "icon": "desktop",
-      "tag": "2",
-      "tagcustom": "badge badge-light-danger badge-pill badge-round float-right mr-2"
+      "icon": "desktop"
     },
     {
-      "url": "#",
-      "name": "Starter kit",
-      "i18n": "Starter kit",
-      "icon": "unlink",
-      "submenu": [
-        {
-          "url": "sk-layout-1-column",
-          "name": "1 column",
-          "i18n": "1 column",
-          "icon": "bx bx-right-arrow-alt"
-        },
-        {
-          "url": "sk-layout-2-columns",
-          "name": "2 columns",
-          "i18n": "2 columns",
-          "icon": "bx bx-right-arrow-alt"
-        },
-        {
-          "url": "fixed-navbar",
-          "name": "Fixed navbar",
-          "i18n": "Fixed navbar",
-          "icon": "bx bx-right-arrow-alt"
-        },
-        {
-          "url": "sk-layout-fixed",
-          "name": "Fixed layout",
-          "i18n": "Fixed layout",
-          "icon": "bx bx-right-arrow-alt"
-        },
-        {
-          "url": "sk-layout-static",
-          "name": "Static layout",
-          "i18n": "Static layout",
-          "icon": "bx bx-right-arrow-alt"
-        }
-      ]
+      "url": "/admin/category",
+      "name": "Category",
+      "i18n": "Category",
+      "icon": "pie-chart"
     },
     {
-      "url": "https://pixinvent.ticksy.com/",
-      "name": "Raise Support",
-      "i18n": "Raise Support",
-      "icon": "help",
-      "newTab":"_blank"
+      "url": "/admin/brand",
+      "name": "Brand",
+      "i18n": "Brand",
+      "icon": "paper-plane"
     },
     {
-      "url": "https://pixinvent.com/demo/frest-clean-bootstrap-admin-dashboard-template/documentation",
-      "name": "Documentation",
-      "i18n": "Documentation",
-      "icon": "morph-folder",
-      "newTab":"_blank"
+      "url": "/admin/product",
+      "name": "Product",
+      "i18n": "Product",
+      "icon": "list"
     }
   ]
 }
