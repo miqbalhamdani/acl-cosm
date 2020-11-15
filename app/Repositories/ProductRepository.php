@@ -52,4 +52,17 @@ class ProductRepository extends AbstractRepository implements ProductInterface
 
         return $data;
     }
+
+    /**
+    * Get detail product by slug
+    *
+    * @param String $slug
+    * @return Object
+    */
+    public function findBySlug($slug)
+    {
+        return $this->model
+            ->where('slug', $slug)
+            ->first();
+    }
 }

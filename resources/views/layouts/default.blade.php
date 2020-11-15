@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
     <title>Product Detail</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;700;900&amp;display=swap"/>
     <link rel="shortcut icon" type="image/png" href="./assets/images/fav.png"/>
@@ -21,11 +23,13 @@
     <!-- BEGIN: Laravel Vue-->
     <link rel="stylesheet" type="text/css" href="{{asset('vue/css/app.css')}}">
     <!-- END: Laravel Vue-->
+
+    @stack('css')
   </head>
   <body>
     @include('partial.navbar')
 
-    <div id="content">
+    <div id="app">
       @include('partial.title')
 
       @yield('content')

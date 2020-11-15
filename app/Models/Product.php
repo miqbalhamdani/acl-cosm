@@ -64,4 +64,48 @@ class Product extends Model
         return $this->hasOne('App\Models\Category', 'id', 'category_id');
     }
 
+
+    /**
+    * The attributes that are appends.
+    *
+    * @var array
+    */
+    protected $appends = [
+        'all_photos',
+        'url',
+    ];
+
+    /**
+    * All photos from photo and photo in variants
+    *
+    * @return String
+    */
+    public function getAllPhotosAttribute()
+    {
+        $images = explode(',', $this->images);
+        $imagesCollection = collect($images);
+
+        $variants = json_decode($this->variants);
+        $variantsCollection = collect($variants)
+            ->map(function ($variant) {
+                if (!@$variant->image) return '';
+                return $variant->image;
+            })
+            ->filter(function ($variant) {
+                return $variant != '';
+            });
+
+        $merged = $imagesCollection->merge($variantsCollection);
+        return $merged->all();
+    }
+
+    /**
+    * Product Url
+    *
+    * @return String
+    */
+    public function getUrlAttribute()
+    {
+        return route('product-detail', ['slug' => $this->slug]);
+    }
 }
