@@ -21,8 +21,8 @@ Route::get('/ecommerce', 'AccessController@home')->middleware('role:Admin');
 Auth::routes();
 
 // frontend
-Route::get('/', 'FrontendController@index');
-Route::get('/products', 'FrontendController@list');
+Route::get('/', 'FrontendController@index')->name('home');
+Route::get('/products', 'FrontendController@list')->name('product-list');
 Route::get('/products/{slug}', 'FrontendController@detail')->name('product-detail');
 
 // dashboard Routes

@@ -30,7 +30,9 @@
     @include('partial.navbar')
 
     <div id="app">
-      @include('partial.title')
+      @if (Route::current()->getName() != 'home')
+        @include('partial.title')
+      @endif
 
       @yield('content')
 
@@ -55,5 +57,7 @@
     <script src="{{ mix('vue/js/vendor.js') }}"></script>
     <script src="{{ mix('vue/js/app.js') }}"></script>
     <!-- END: Laravel Vue -->
+
+    @stack('css-body')
   </body>
 </html>
