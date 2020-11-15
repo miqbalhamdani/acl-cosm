@@ -35,7 +35,7 @@ if (Route::current()->getName() == 'home') {
 
             <ul class="dropdown-menu">
               <li>
-                <a href="#">
+                <a href="{{ route('company-profile') }}">
                   Company Profile
                 </a>
               </li>
@@ -49,13 +49,13 @@ if (Route::current()->getName() == 'home') {
           </li>
 
           <li>
-            <a href="#">
+            <a href="{{ route('layanan') }}">
               Layanan
             </a>
           </li>
 
           <li>
-            <a href="">
+            <a href="{{ route('product-list') }}">
               In-house Brand
               <span class="dropable-icon">
                 <i class="fas fa-angle-down"></i>
@@ -107,7 +107,7 @@ if (Route::current()->getName() == 'home') {
           </li>
 
           <li>
-            <a href="#">
+            <a href="{{ route('contact') }}">
               Kontak
             </a>
           </li>

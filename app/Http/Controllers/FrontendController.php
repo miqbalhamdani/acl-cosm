@@ -29,14 +29,91 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function companyProfile()
+    {
+        $breadcrumbs = [
+            'Home',
+            'About Us',
+        ];
+
+        $data = [
+            'title' => 'About Us',
+            'breadcrumbs' => $breadcrumbs,
+        ];
+
+        return view('pages.company-profile', $data);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function sertifikat()
+    {
+        return view('pages.sertifikat');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function layanan()
+    {
+        $breadcrumbs = [
+            'Home',
+            'Services',
+        ];
+
+        $data = [
+            'title' => 'Services',
+            'breadcrumbs' => $breadcrumbs,
+        ];
+
+        return view('pages.layanan', $data);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function contact()
+    {
+        $breadcrumbs = [
+            'Home',
+            'Contact us',
+        ];
+
+        $data = [
+            'title' => 'Contact',
+            'breadcrumbs' => $breadcrumbs,
+        ];
+
+        return view('pages.contact', $data);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function list()
     {
+        $breadcrumbs = [
+            'Home',
+            'Products',
+        ];
+
         $param = [
             'perpage' => 1,
             'sort' => 'newest',
         ];
 
         $data = [
+            'title' => 'Products',
+            'breadcrumbs' => $breadcrumbs,
             'categories' => \Cache::get('product-categories'),
             'brands' => \Cache::get('product-brands'),
             'collection' => $this->model->findWithPaginate($param),
@@ -56,7 +133,15 @@ class FrontendController extends Controller
         $product = $this->model->findBySlug($slug);
         // if (!$product) return view('errors.404');
 
+        $breadcrumbs = [
+            'Home',
+            'Products',
+            $product->name,
+        ];
+
         $data = [
+            'title' => 'Products',
+            'breadcrumbs' => $breadcrumbs,
             'og_title' => $product->name,
             'og_description' => "Get high quality bedding set only with ". $product->price_format,
             'og_url' => $product->url,

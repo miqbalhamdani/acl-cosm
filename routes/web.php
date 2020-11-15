@@ -25,6 +25,11 @@ Route::get('/', 'FrontendController@index')->name('home');
 Route::get('/products', 'FrontendController@list')->name('product-list');
 Route::get('/products/{slug}', 'FrontendController@detail')->name('product-detail');
 
+Route::get('/company-profile', 'FrontendController@companyProfile')->name('company-profile');
+Route::get('/sertifikat', 'FrontendController@sertifikat')->name('sertifikat');
+Route::get('/layanan', 'FrontendController@layanan')->name('layanan');
+Route::get('/contact', 'FrontendController@contact')->name('contact');
+
 // dashboard Routes
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']] , function()
 {
