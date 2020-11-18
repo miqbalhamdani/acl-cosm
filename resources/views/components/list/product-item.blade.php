@@ -13,7 +13,11 @@
           $path = env('PATH_PRODUCT') .'/'. $item->slug .'/';
         @endphp
         @for ($i = 0; $i < 2; $i++)
-          <img src="{{ URL($path . $item->all_photos[$i]) }}" alt="Product image"/>
+          @if (File::isFile($path . $item->all_photos[$i]))
+            <img src="{{ URL($path . $item->all_photos[$i]) }}" alt="Product image"/>
+          @else
+            <img src="{{ URL('img/no-image.png') }}" alt="Product image"/>
+          @endif
         @endfor
       </a>
     </div>

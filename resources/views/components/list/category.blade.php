@@ -5,6 +5,7 @@
   </div>
 
   <ul>
+    @if(Cache::has('product-categories'))
     @foreach ($categories as $item)
       @if (!$item->parent_id)
         <li>
@@ -22,5 +23,6 @@
         @endforeach
       @endif
     @endforeach
+    @endif
   </ul>
 </div>

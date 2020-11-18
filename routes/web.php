@@ -59,6 +59,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']] , function()
     Route::post('category/add', 'CategoryController@store');
     Route::get('category/edit/{id}', 'CategoryController@store');
     Route::post('category/edit/{id}', 'CategoryController@store');
+    Route::get('category/delete/{id}', 'CategoryController@destroy');
 
     /*
     |--------------------------------------------------------------------------

@@ -69,6 +69,7 @@ if (Route::current()->getName() == 'home') {
               @endphp
 
               <div class="col-9" style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+                @if(Cache::has('product-categories'))
                 @foreach ($categories as $category)
                   @if (!$category->parent_id)
                   <ul class="dropdown-menu__col">
@@ -86,6 +87,7 @@ if (Route::current()->getName() == 'home') {
                   </ul>
                   @endif
                 @endforeach
+                @endif
               </div>
 
               <div class="col-3">
@@ -94,6 +96,7 @@ if (Route::current()->getName() == 'home') {
                     Brands
                   </li>
 
+                  @if(Cache::has('product-brands'))
                   @foreach ($brands as $brand)
                   <li>
                     <a href="#">
@@ -101,6 +104,7 @@ if (Route::current()->getName() == 'home') {
                     </a>
                   </li>
                   @endforeach
+                  @endif
                 </ul>
               </div>
             </ul>

@@ -6,6 +6,7 @@
 
   <div class="shop-sidebar__section__item">
     <ul>
+      @if(Cache::has('product-brands'))
       @foreach ($brands as $item)
         <li>
           <a href="">
@@ -20,6 +21,7 @@
           </a>
         </li>
       @endforeach
+      @endif
     </ul>
   </div>
 </div>
