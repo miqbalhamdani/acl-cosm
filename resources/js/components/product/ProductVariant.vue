@@ -66,7 +66,7 @@
                   :key="index"
                   type="button"
                   class="btn btn-outline-info round mr-1 mb-1"
-                  @click="removePackage(item)"
+                  @click="removeVariant(item)"
                 >
                   <i class="bx bx-x"></i>
                   <span class="align-middle ml-25">

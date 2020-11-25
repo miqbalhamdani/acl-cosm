@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->smallInteger('brand_id');
             $table->smallInteger('category_id');
             $table->text('description')->nullable();
-            $table->text('images');
+            $table->text('images')->nullable();
             $table->text('variant_size')->nullable();
             $table->text('images_size')->nullable();
             $table->json('variants')->nullable();

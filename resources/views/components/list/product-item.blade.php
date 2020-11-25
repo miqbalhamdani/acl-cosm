@@ -11,9 +11,14 @@
       <a class="product-thumb__image" href="{{ URL($item->url) }}">
         @php
           $path = env('PATH_PRODUCT') .'/'. $item->slug .'/';
+          $count = (count($item->all_photos) > 1) ? 2 : 1;
         @endphp
-        @for ($i = 0; $i < 2; $i++)
-          <img src="{{ URL($path . $item->all_photos[$i]) }}" alt="Product image"/>
+        @for ($i = 0; $i < $count; $i++)
+          @if (File::isFile($path . $item->all_photos[$i]))
+            <img src="{{ URL($path . $item->all_photos[$i]) }}" alt="Product image"/>
+          @else
+            <img src="{{ URL('img/no-image.png') }}" alt="Product image"/>
+          @endif
         @endfor
       </a>
     </div>
