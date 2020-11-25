@@ -107,7 +107,7 @@ class FrontendController extends Controller
         ];
 
         $param = [
-            'perpage' => 1,
+            'perpage' => 20,
             'sort' => 'newest',
         ];
 

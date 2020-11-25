@@ -76,6 +76,7 @@ class ProductController extends Controller
                     'variant_size' => $request->input('variant_size'),
                     'variants' => $request->input('variants'),
                     'is_active' => $request->input('is_active'),
+                    'images' => $request->input('images'),
                 ];
 
                 if ($request->input('images')) {
@@ -105,8 +106,6 @@ class ProductController extends Controller
                             \File::move($temp . $sizeImages[$i], $gallery . $sizeImages[$i]);
                         }
                     }
-
-                    $data['images'] = $request->input('images');
                 }
 
                 if ($id) {
@@ -187,18 +186,11 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        // DELETE IMAGE ON DIRECTORY
+        // DELETE DIRECTORY
         $data = $this->model->find($id);
-
-        if ($data->image) {
-            $img_path = public_path($this->path);
-            $img_old  = $data->image;
-
-            if(!empty($img_old)){
-                if(\File::isFile($img_path.'/'.$img_old)){
-                    \File::delete($img_path.'/'.$img_old);
-                }
-            }
+        $path = public_path($this->path) .'/'. $data->slug .'/';
+        if (\File::exists($path)) {
+            \File::deleteDirectory($path);
         }
 
         // DELETE DATA
