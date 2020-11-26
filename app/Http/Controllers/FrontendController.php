@@ -99,7 +99,7 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function list()
+    public function list(Request $request)
     {
         $breadcrumbs = [
             'Home',
@@ -109,6 +109,8 @@ class FrontendController extends Controller
         $param = [
             'perpage' => 20,
             'sort' => 'newest',
+            'category' => $request->input('category'),
+            'brands' => $request->input('brands'),
         ];
 
         $data = [

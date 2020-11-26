@@ -59,5 +59,7 @@
     <!-- END: Laravel Vue -->
 
     @stack('css-body')
+
+    @stack('javascript')
   </body>
 </html>

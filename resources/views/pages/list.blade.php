@@ -16,7 +16,7 @@
       </div>
 
       <div class="col-12 col-md-8 col-lg-9">
-        @include('components.list.filter')
+        {{-- @include('components.list.filter') --}}
 
         <div class="shop-products">
           <div class="shop-products__gird">
