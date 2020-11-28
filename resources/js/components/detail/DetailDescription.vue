@@ -25,6 +25,7 @@
             v-for="(item, index) in variantSize"
             :key="index"
             class="inputGroup"
+            @click="changeSlide(item)"
           >
             <input
               :id="`variant-size-${index}`"
@@ -33,7 +34,7 @@
             />
 
             <label :for="`variant-size-${index}`">
-              {{ item }}
+              {{ item.size }}
             </label>
           </div>
         </div>
@@ -51,6 +52,8 @@
 </template>
 
 <script>
+import bus from '~/plugins/bus';
+
 export default {
   props: {
     product: {
@@ -61,7 +64,13 @@ export default {
 
   computed: {
     variantSize() {
-      return this.product.variant_size.split(",");
+      return JSON.parse(this.product.variants);
+    },
+  },
+
+  methods: {
+    changeSlide(item) {
+      bus.$emit('change-slide', item);
     },
   },
 }
