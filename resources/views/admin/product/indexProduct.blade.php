@@ -58,6 +58,10 @@
                 @endforeach
               </tbody>
             </table>
+
+            <div class="float-right">
+              {{ $collection->links() }}
+            </div>
           </div>
         </div>
       </div>

@@ -15,9 +15,17 @@
         @endphp
         @for ($i = 0; $i < $count; $i++)
           @if (File::isFile($path . $item->all_photos[$i]))
-            <img src="{{ URL($path . $item->all_photos[$i]) }}" alt="Product image"/>
+            <img
+              src="{{ URL($path . $item->all_photos[$i]) }}"
+              style="max-height: 265px; min-height: 262px;"
+              alt="Product image"
+            />
           @else
-            <img src="{{ URL('img/no-image.png') }}" alt="Product image"/>
+            <img
+              src="{{ URL('img/no-image.png') }}"
+              style="max-height: 265px; min-height: 262px;"
+              alt="Product image"
+            />
           @endif
         @endfor
       </a>
