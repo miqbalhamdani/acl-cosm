@@ -84,4 +84,22 @@ class ProductRepository extends AbstractRepository implements ProductInterface
             ->where('slug', $slug)
             ->first();
     }
+
+    /**
+    * Get all relatetd product
+    * filter by category
+    *
+    * @param String $slug
+    * @return Object
+    */
+    public function getRelatedProduct($product_id)
+    {
+        $product = $this->model->find($product_id);
+
+        return $this->model
+            ->where('category_id', $product->category_id)
+            ->where('id', '<>', $product_id)
+            ->inRandomOrder()
+            ->get();
+    }
 }

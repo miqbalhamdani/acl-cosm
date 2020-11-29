@@ -149,6 +149,7 @@ class FrontendController extends Controller
             'og_url' => $product->url,
             'og_image' => $product->photo_url,
             'product' => $product,
+            'related_product' => $this->model->getRelatedProduct($product->id),
         ];
 
         return view('pages.detail', $data);
