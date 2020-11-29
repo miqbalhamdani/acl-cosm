@@ -11,12 +11,14 @@
     data-target="#collapse-{{ $item->id }}"
     aria-expanded="false"
     aria-controls="collapse-{{ $item->id }}"
+    style="cursor: pointer;"
   >
     <span class="collapse-title">
       <i class='bx bxs-package align-middle'></i>
-      <span class="align-middle">Size Product</span>
+      <span class="align-middle">{{ @$item->variant_name }} Product</span>
     </span>
   </div>
+
   <div
     id="collapse-{{ $item->id }}"
     role="tabpanel"
@@ -25,28 +27,48 @@
   >
     <div class="card-content">
       <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-light mb-0">
-            <thead>
-              <tr>
-                <th>Size Name</th>
-                <th>Image</th>
-              </tr>
-            </thead>
-            <tbody>
-              @php
-                $variants = json_decode($item->variants);
-                $path = env('PATH_PRODUCT') .'/'. $item->slug .'/';
-              @endphp
+        @php
+          $path = env('PATH_PRODUCT') .'/'. $item->slug .'/';
+        @endphp
 
-              @foreach ($variants as $variant)
+        <div class="row">
+          <div class="col-6 table-responsive">
+            <table class="table table-light mb-0">
+              <thead>
                 <tr>
-                  <td>{{ $variant->size }}</td>
-                  <td><img src="{{ URL($path . $variant->image) }}" height="50px" alt=""></td>
+                  <th>{{ @$item->variant_name }} Name</th>
+                  <th>Image</th>
                 </tr>
-              @endforeach
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                @foreach ($item->first_variants as $variant)
+                  <tr>
+                    <td>{{ $variant->size }}</td>
+                    <td><img src="{{ URL($path . $variant->image) }}" height="50px" alt=""></td>
+                  </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-6 table-responsive">
+            <table class="table table-light mb-0">
+              <thead>
+                <tr>
+                  <th>{{ @$item->variant_name }} Name</th>
+                  <th>Image</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach ($item->second_variants as $variant)
+                  <tr>
+                    <td>{{ $variant->size }}</td>
+                    <td><img src="{{ URL($path . $variant->image) }}" height="50px" alt=""></td>
+                  </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

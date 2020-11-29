@@ -72,6 +72,9 @@ class Product extends Model
     */
     protected $appends = [
         'all_photos',
+        'variants_collection',
+        'first_variants',
+        'second_variants',
         'url',
     ];
 
@@ -97,6 +100,61 @@ class Product extends Model
 
         $merged = $imagesCollection->merge($variantsCollection);
         return $merged->all();
+    }
+
+    /**
+    * Get json variants
+    *
+    * @return Array
+    */
+    public function getVariantsCollectionAttribute()
+    {
+        if (!$this->variants) return;
+        return json_decode($this->variants);
+    }
+
+    /**
+    * Get half variant lenght
+    *
+    * @return Integer
+    */
+    public function halfVariants()
+    {
+        return ceil($this->totalVariants() / 2);
+    }
+
+    /**
+    * Get total variant lenght
+    *
+    * @return Integer
+    */
+    public function totalVariants()
+    {
+        return count($this->variants_collection);
+    }
+
+    /**
+    * Get first variant
+    *
+    * @return Array
+    */
+    public function getFirstVariantsAttribute()
+    {
+        $collection = collect($this->variants_collection);
+        $chunk = $collection->splice(0, $this->halfVariants());
+        return $chunk->all();
+    }
+
+    /**
+    * Get second variant
+    *
+    * @return Array
+    */
+    public function getSecondVariantsAttribute()
+    {
+        $collection = collect($this->variants_collection);
+        $chunk = $collection->splice($this->halfVariants(), $this->totalVariants());
+        return $chunk->all();
     }
 
     /**

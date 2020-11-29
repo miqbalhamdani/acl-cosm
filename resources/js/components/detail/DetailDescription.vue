@@ -17,7 +17,7 @@
 
       <div class="content-item">
         <div class="item-title">
-          Color:
+          {{ product.variant_name }}:
         </div>
 
         <div class="item-desc">

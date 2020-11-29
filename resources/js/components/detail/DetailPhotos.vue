@@ -99,6 +99,8 @@ export default {
   methods: {
     changeSlide(item) {
       const index = this.images.findIndex((image) => image === item.image);
+      if (index === -1) return;
+
       this.swiper.slideTo(index+5, 1000, false);
     },
   },
