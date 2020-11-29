@@ -17,7 +17,9 @@
 
           <div class="contact-info__item__detail">
             <h3>Address</h3>
-            <p>2168 S Archer Ave, Chicago, IL 60616, US</p>
+            <p>Gg. Inonkailan No.86, Mustikasari,  <br>
+              Kec. Mustika Jaya, Kota Bekasi, <br>
+              Jawa Barat 17157</p>
           </div>
         </div>
 
@@ -28,7 +30,7 @@
 
           <div class="contact-info__item__detail">
             <h3>Phone</h3>
-            <p>+1 312-808-1999 | +1 233-688-8999</p>
+            <p>(021) 82651283</p>
           </div>
         </div>
 
@@ -39,18 +41,40 @@
 
           <div class="contact-info__item__detail">
             <h3>Email</h3>
-            <p>Beatycosmetics@gmail.com</p>
+            <p>cosm_acl@yahoo.com</p>
           </div>
         </div>
 
         <div class="contact-info__item">
           <div class="contact-info__item__icon">
-            <i class="far fa-clock"></i>
+            <img
+              src="{{ URL('img/shopee-icon.png') }}"
+              style="
+                margin-top: -5px;
+                width: 20px;
+            ">
           </div>
 
           <div class="contact-info__item__detail">
-            <h3>Opentime</h3>
-            <p>Sun-Sat: 8.00am - 9.00.pm</p>
+            <h3>Shopee Official</h3>
+            <p><a href="https://shopee.co.id/acl_cosm">https://shopee.co.id/acl_cosm</a></p>
+          </div>
+        </div>
+
+        <div class="contact-info__item">
+          <div class="contact-info__item__icon">
+            <img
+              src="{{ URL('img/tokopedia-icon.png') }}"
+              style="
+                margin-left: -5px;
+                margin-top: -10px;
+                width: 30px;
+            ">
+          </div>
+
+          <div class="contact-info__item__detail">
+            <h3>Tokopedia Official</h3>
+            <p><a href="https://www.tokopedia.com/aclcosm">https://www.tokopedia.com/aclcosm</a></p>
           </div>
         </div>
       </div>
@@ -98,7 +122,7 @@
       <div class="col-12">
         <iframe
           class="contact-map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26544.761428132653!2d105.83081260286463!3d21.01523825635793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9bd9861ca1%3A0xe7887f7b72ca17a9!2zSMOgIE7hu5lpLCBIb8OgbiBLaeG6v20sIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1594639675485!5m2!1svi!2s"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15862.843495350153!2d106.9996228!3d-6.3016691!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4dd83a342acf520f!2sPT%20Aulia%20Citra%20Lestari!5e0!3m2!1sid!2sid!4v1606621780282!5m2!1sid!2sid"
           width="100%"
           height="450"
           frameborder="0"

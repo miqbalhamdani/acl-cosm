@@ -1,14 +1,22 @@
 <?php namespace App\Repositories;
 
 use App\Models\Product;
+use App\Models\Category;
+use App\Models\Brand;
 use App\Repositories\AbstractRepository;
 use App\Repositories\Contracts\ProductInterface;
 
 class ProductRepository extends AbstractRepository implements ProductInterface
 {
-    public function __construct(Product $product)
+    public function __construct(
+        Product $product,
+        Category $category,
+        Brand $brand
+    )
     {
         $this->model = $product;
+        $this->category = $category;
+        $this->brand = $brand;
     }
 
     /**
@@ -21,6 +29,7 @@ class ProductRepository extends AbstractRepository implements ProductInterface
     {
         $perpage = $param['perpage'] ?? 20;
         $category = $param['category'] ?? '';
+        $brands = $param['brands'] ?? '';
         $sort = $param['sort'] ?? '';
         $name = $param['name'] ?? '';
 
@@ -30,6 +39,16 @@ class ProductRepository extends AbstractRepository implements ProductInterface
             $categories = $this->category->where('slug', $category)->first();
             $categoriesId = $categories->id ?? 0;
             $data = $data->where('category_id', $categoriesId);
+        }
+
+        if (!empty($brands)) {
+            $arrBrands = explode(",", $brands);
+            $dataBrands = $this->brand->whereIn('slug', $arrBrands)->get();
+
+            $arrBrands = $dataBrands->map(function ($item) {
+                return $item->id;
+            });
+            $data = $data->whereIn('brand_id', $arrBrands);
         }
 
         if (!empty($name)) {
@@ -64,5 +83,23 @@ class ProductRepository extends AbstractRepository implements ProductInterface
         return $this->model
             ->where('slug', $slug)
             ->first();
+    }
+
+    /**
+    * Get all relatetd product
+    * filter by category
+    *
+    * @param String $slug
+    * @return Object
+    */
+    public function getRelatedProduct($product_id)
+    {
+        $product = $this->model->find($product_id);
+
+        return $this->model
+            ->where('category_id', $product->category_id)
+            ->where('id', '<>', $product_id)
+            ->inRandomOrder()
+            ->get();
     }
 }

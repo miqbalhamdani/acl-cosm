@@ -71,9 +71,29 @@ class Product extends Model
     * @var array
     */
     protected $appends = [
+        'first_photo',
         'all_photos',
+        'variants_collection',
+        'first_variants',
+        'second_variants',
         'url',
     ];
+
+    /**
+    * First Photo
+    *
+    * @return String
+    */
+    public function getFirstPhotoAttribute()
+    {
+        $path = env('PATH_PRODUCT') .'/'. $this->slug;
+
+        if (count($this->all_photos) < 1) {
+            return URL('img/no-image.png');
+        }
+
+        return URL($path .'/'. $this->all_photos[0]);
+    }
 
     /**
     * All photos from photo and photo in variants
@@ -82,7 +102,7 @@ class Product extends Model
     */
     public function getAllPhotosAttribute()
     {
-        $images = explode(',', $this->images);
+        $images = ($this->images) ? explode(',', $this->images) : null;
         $imagesCollection = collect($images);
 
         $variants = json_decode($this->variants);
@@ -97,6 +117,61 @@ class Product extends Model
 
         $merged = $imagesCollection->merge($variantsCollection);
         return $merged->all();
+    }
+
+    /**
+    * Get json variants
+    *
+    * @return Array
+    */
+    public function getVariantsCollectionAttribute()
+    {
+        if (!$this->variants) return;
+        return json_decode($this->variants);
+    }
+
+    /**
+    * Get half variant lenght
+    *
+    * @return Integer
+    */
+    public function halfVariants()
+    {
+        return ceil($this->totalVariants() / 2);
+    }
+
+    /**
+    * Get total variant lenght
+    *
+    * @return Integer
+    */
+    public function totalVariants()
+    {
+        return count($this->variants_collection);
+    }
+
+    /**
+    * Get first variant
+    *
+    * @return Array
+    */
+    public function getFirstVariantsAttribute()
+    {
+        $collection = collect($this->variants_collection);
+        $chunk = $collection->splice(0, $this->halfVariants());
+        return $chunk->all();
+    }
+
+    /**
+    * Get second variant
+    *
+    * @return Array
+    */
+    public function getSecondVariantsAttribute()
+    {
+        $collection = collect($this->variants_collection);
+        $chunk = $collection->splice($this->halfVariants(), $this->totalVariants());
+        return $chunk->all();
     }
 
     /**

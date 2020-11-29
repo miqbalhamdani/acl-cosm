@@ -31,13 +31,16 @@ class FrontendController extends Controller
      */
     public function companyProfile()
     {
+        $title = 'Company Profile';
+
         $breadcrumbs = [
             'Home',
-            'About Us',
+            $title,
         ];
 
         $data = [
-            'title' => 'About Us',
+            'title' => $title,
+            'og_title' => $title,
             'breadcrumbs' => $breadcrumbs,
         ];
 
@@ -51,7 +54,20 @@ class FrontendController extends Controller
      */
     public function sertifikat()
     {
-        return view('pages.sertifikat');
+        $title = 'Sertifikasi';
+
+        $breadcrumbs = [
+            'Home',
+            $title,
+        ];
+
+        $data = [
+            'title' => $title,
+            'og_title' => $title,
+            'breadcrumbs' => $breadcrumbs,
+        ];
+
+        return view('pages.sertifikat', $data);
     }
 
     /**
@@ -61,13 +77,16 @@ class FrontendController extends Controller
      */
     public function layanan()
     {
+        $title = 'Layanan';
+
         $breadcrumbs = [
             'Home',
-            'Services',
+            $title,
         ];
 
         $data = [
-            'title' => 'Services',
+            'title' => $title,
+            'og_title' => $title,
             'breadcrumbs' => $breadcrumbs,
         ];
 
@@ -99,7 +118,7 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function list()
+    public function list(Request $request)
     {
         $breadcrumbs = [
             'Home',
@@ -109,6 +128,8 @@ class FrontendController extends Controller
         $param = [
             'perpage' => 20,
             'sort' => 'newest',
+            'category' => $request->input('category'),
+            'brands' => $request->input('brands'),
         ];
 
         $data = [
@@ -143,10 +164,11 @@ class FrontendController extends Controller
             'title' => 'Products',
             'breadcrumbs' => $breadcrumbs,
             'og_title' => $product->name,
-            'og_description' => "Get high quality bedding set only with ". $product->price_format,
+            'og_description' => $product->description,
             'og_url' => $product->url,
-            'og_image' => $product->photo_url,
+            'og_image' => $product->first_photo,
             'product' => $product,
+            'related_product' => $this->model->getRelatedProduct($product->id),
         ];
 
         return view('pages.detail', $data);

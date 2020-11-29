@@ -9,12 +9,26 @@
       @if(Cache::has('product-brands'))
       @foreach ($brands as $item)
         <li>
-          <a href="">
+          @php
+            $url = generateBrandUrl($item->slug);
+          @endphp
+          <a
+            href="#"
+            onclick="filterBrandsRedirect('{{$url}}')"
+          >
             <label for="brand-{{ $item->slug }}">
+              @php
+                $dataBrands = app('request')->input('brands');
+                $arrBrands = explode(",", $dataBrands);
+              @endphp
+
               <input
                 type="checkbox"
                 name="{{ $item->slug }}"
                 id="brand-{{ $item->slug }}"
+                @if (in_array($item->slug, $arrBrands))
+                  checked
+                @endif
               />
                 {{ $item->name }}
             </label>
@@ -25,6 +39,15 @@
     </ul>
   </div>
 </div>
+
+@push('javascript')
+<script>
+function filterBrandsRedirect(url) {
+  event.preventDefault();
+  window.location.href = url;
+}
+</script>
+@endpush
 
 @push('css')
 <style>

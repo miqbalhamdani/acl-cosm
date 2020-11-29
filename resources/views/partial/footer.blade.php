@@ -7,21 +7,6 @@
         </a>
       </div>
 
-      <div class="footer-one__header__newsletter">
-        <span>Subscribe Newletter:</span>
-
-        <div class="footer-one-newsletter">
-          <div class="subscribe-form">
-            <div class="mc-form">
-              <input type="text" placeholder="Enter your email"/>
-              <button class="btn ">
-                <i class="fas fa-paper-plane"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="footer-one__header__social">
         <div class="social-icons -border">
           <ul>
@@ -52,49 +37,75 @@
 
     <div class="footer-one__body">
       <div class="row">
-        <div class="col-12 col-md-6 col-lg-4">
+        <div class="col-12 col-md-6 col-lg-5">
           <div class="footer__section -info">
             <h5 class="footer-title">Contact info</h5>
-            <p>Address:<span>2168 S Archer Ave, Chicago, IL 60616, US</span></p>
-            <p>Phone:<span>+1 312-808-1999</span></p>
-            <p>Email:<span>Beatycosmetics@gmail.com</span></p>
-            <p>Opentime:<span>8.00am - 11.00.pm</span></p>
+            <p>Address: <br>
+              <span>
+                Gg. Inonkailan No.86, Mustikasari,  <br>
+                Kec. Mustika Jaya, Kota Bekasi, <br>
+                Jawa Barat 17157
+              </span>
+            </p>
+
+            <p>Phone:<span>(021) 82651283</span></p>
+
+            <p>Email:<span>cosm_acl@yahoo.com</span></p>
           </div>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-4">
+        <div class="col-12 col-md-6 col-lg-3">
           <div class="footer__section -links">
-            <div class="row">
-              <div class="col-12 col-sm-6">
-                <h5 class="footer-title">Account</h5>
-                <ul>
-                  <li><a href="#">My account</a></li>
-                  <li><a href="wishlist.html">Wishlist</a></li>
-                  <li><a href="cart">Cart</a></li>
-                  <li><a href="fullwidth-4col">Shop</a></li>
-                  <li><a href="checkout">Checkout</a></li>
-                </ul>
+            <h5 class="footer-title">Infomation</h5>
+            <ul>
+              <li><a href="about.html">About us</a></li>
+              <li><a href="contact.html">Careers</a></li>
+              <li><a href="contact.html">Delivery Information</a></li>
+              <li><a href="contact.html">Privacy Policy</a></li>
+              <li><a href="contact.html">Terms &amp; Condition</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="footer__section -links">
+            <h5 class="footer-title">Keep In Touch</h5>
+
+            <div class="contact-info__item">
+              <div class="contact-info__item__icon">
+                <img
+                  src="{{ URL('img/shopee-icon.png') }}"
+                  style="
+                    margin-top: -5px;
+                    width: 20px;
+                ">
               </div>
 
-              <div class="col-12 col-sm-6">
-                <h5 class="footer-title">Infomation</h5>
-                <ul>
-                  <li><a href="about.html">About us</a></li>
-                  <li><a href="contact.html">Careers</a></li>
-                  <li><a href="contact.html">Delivery Information</a></li>
-                  <li><a href="contact.html">Privacy Policy</a></li>
-                  <li><a href="contact.html">Terms &amp; Condition</a></li>
-                </ul>
+              <div class="contact-info__item__detail">
+                <p><a href="https://shopee.co.id/acl_cosm">
+                  Shopee Official
+                </a></p>
               </div>
             </div>
-          </div>
-        </div>
 
-        <div class="col-12 col-lg-4">
-          <div class="footer__section -payment">
-            <h5 class="footer-title">Payment methods</h5>
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit gravida facilisis.</p>
-            <div class="payment-methods"><img src="{{ URL('fe/images/footer/payment.png') }}" alt="Payment methods"/></div>
+            <div class="contact-info__item">
+              <div class="contact-info__item__icon">
+                <img
+                  src="{{ URL('img/tokopedia-icon.png') }}"
+                  style="
+                    margin-left: -5px;
+                    margin-top: -10px;
+                    width: 30px;
+                ">
+              </div>
+
+              <div class="contact-info__item__detail">
+                <p><a href="https://www.tokopedia.com/aclcosm">
+                  Tokopedia Official
+                </a></p>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -104,7 +115,7 @@
   <div class="footer-one__footer">
     <div class="container">
       <div class="footer-one__footer__wrapper">
-        <p>© Copyright 2020 Beauty</p>
+        <p>© PT Aulia Citra Lestari 2004-{{ date("Y") }}.</p>
         <ul>
           <li><a href="contact.html">Privacy Policy</a></li>
           <li><a href="contact.html">Terms &amp; Condition</a></li>

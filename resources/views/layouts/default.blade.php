@@ -2,13 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8"/>
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
-    <title>Product Detail</title>
+		<!-- Title -->
+		<title>{{ @$og_title ? $og_title . ' | Aulia Citra Lestari' : 'Aulia Citra Lestari | Be a good partner for the customer' }}</title>
+		<meta name="description" content="{{ $og_description ?? 'Menjadi perusahaan kosmetik lokal yang mengutamakan keamanan dan mutu produk dengan harga yang terjangkau.' }}">
+		<meta name="author" content="Aulia Citra Lestari">
+		<link rel="canonical" href="{{ $og_url ?? 'https://www.aclcosm.com/' }}">
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="{{ $og_title ?? 'Aulia Citra Lestari | Be a good partner for the customer' }}">
+
+		<!-- OpenGraph -->
+		<meta property="og:title" content="{{ $og_title ?? 'Aulia Citra Lestari | Be a good partner for the customer' }}">
+		<meta property="og:description" content="{{ $og_description ?? 'Menjadi perusahaan kosmetik lokal yang mengutamakan keamanan dan mutu produk dengan harga yang terjangkau.' }}">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="{{ $og_url ?? 'https://www.aclcosm.com/' }}">
+		<meta property="og:site_name" content="Aulia Citra Lestari">
+		<meta property="og:image" content="{{ $og_image ?? URL('img/sleep-project-1280x720.jpg') }}"> <!-- here -->
+    <meta property="og:locale" content="id_ID">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="{{ URL('img/sleep-project-icon.svg') }}" type="image/x-icon" /> <!-- here -->
+		<link rel="apple-touch-icon" href="img/sleep-project-icon.svg"> <!-- here -->
+
+		<!-- Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;700;900&amp;display=swap"/>
-    <link rel="shortcut icon" type="image/png" href="./assets/images/fav.png"/>
 
     <!--build:css assets/css/styles.min.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
@@ -59,5 +82,7 @@
     <!-- END: Laravel Vue -->
 
     @stack('css-body')
+
+    @stack('javascript')
   </body>
 </html>

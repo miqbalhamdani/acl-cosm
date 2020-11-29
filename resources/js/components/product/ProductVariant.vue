@@ -32,10 +32,26 @@
           >
 
           <div class="row">
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-12">
+              <div class="form-group">
+                <label for="product-variant-name">
+                  Variant Name
+                </label>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    v-model="name"
+                    id="product-variant-name"
+                    name="variant_name"
+                    class="form-control"
+                    placeholder="Enter Variant Name"
+                  >
+                </div>
+              </div>
+
               <div class="form-group">
                 <label for="product-variant-size">
-                  Size Name
+                  {{ name }} Name
                 </label>
                 <div class="input-group">
                   <input
@@ -43,7 +59,7 @@
                     v-model="size"
                     id="product-variant-size"
                     class="form-control"
-                    placeholder="Enter Size Name"
+                    :placeholder="`Enter ${name} Name`"
                     aria-describedby="button-addon2"
                     @keyup.13="addVariant(size)"
                   >
@@ -78,19 +94,44 @@
           </div>
 
           <div class="row">
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-6 p-0">
               <div class="table-responsive">
-                <table class="table">
+                <table class="table table-bordered mb-0">
                   <thead>
                     <tr>
-                      <th>Size Name</th>
+                      <th>{{ name }} Name</th>
                       <th></th>
                     </tr>
                   </thead>
 
                   <tbody>
                     <VariantItem
-                      v-for="(item, index) in form"
+                      v-for="(item, index) in firstList"
+                      :key="index"
+                      :index="index"
+                      :item="item"
+                      :slug="slug"
+                      @image-set="setImage"
+                      @image-remove="removeImage"
+                    />
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 p-0">
+              <div class="table-responsive">
+                <table class="table table-bordered mb-0">
+                  <thead>
+                    <tr>
+                      <th>{{ name }} Name</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <VariantItem
+                      v-for="(item, index) in secondList"
                       :key="index"
                       :index="index"
                       :item="item"
@@ -120,6 +161,7 @@ export default {
 
   data() {
     return {
+      name: '',
       size: '',
       sizeList: [],
       form: [],
@@ -156,6 +198,22 @@ export default {
     sizeImages() {
       const list = this.form.map((item) => item.image);
       return list.join(',');
+    },
+
+    halfForm() {
+      return Math.ceil(this.totalForm / 2);
+    },
+
+    totalForm() {
+      return this.form.length;
+    },
+
+    firstList() {
+      return this.form.slice(0, this.halfForm);
+    },
+
+    secondList() {
+      return this.form.slice(this.halfForm, this.totalForm);
     },
   },
 

@@ -16,7 +16,9 @@
 
         @foreach ($item->child as $subItem)
           <li class="pl-3">
-            <a href="#">
+            <a href="{{ route('product-list', [
+              'category' => $subItem->slug,
+            ]) }}">
               {{ $subItem->name }}
             </a>
           </li>

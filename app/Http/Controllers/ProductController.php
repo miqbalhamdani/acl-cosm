@@ -74,6 +74,7 @@ class ProductController extends Controller
                     'category_id' => $request->input('category'),
                     'description' => $request->input('description'),
                     'variant_size' => $request->input('variant_size'),
+                    'variant_name' => $request->input('variant_name'),
                     'variants' => $request->input('variants'),
                     'is_active' => $request->input('is_active'),
                     'images' => $request->input('images'),

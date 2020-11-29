@@ -16,13 +16,15 @@
       </div>
 
       <div class="col-12 col-md-8 col-lg-9">
-        @include('components.list.filter')
+        {{-- @include('components.list.filter') --}}
 
         <div class="shop-products">
           <div class="shop-products__gird">
             <div class="row">
               @foreach ($collection as $item)
+              <div class="col-12 col-sm-6 col-lg-4">
                 @include('components.list.product-item', ['item' => $item])
+              </div>
               @endforeach
             </div>
           </div>

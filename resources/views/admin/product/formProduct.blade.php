@@ -36,6 +36,7 @@
 <section id="product">
   <div class="col-md-12 col-12">
     <form
+      id="product-form"
       class="form form-vertical"
       method="POST"
       action="{{ URL(setPostUrl()) }}"
@@ -156,17 +157,6 @@
                         name="category"
                       >
                         @foreach ($categories as $item)
-                          {{-- <option
-                            value="{{ $item->id }}"
-                            @if(@$collection['brand_id'] == $item->id)
-                              selected
-                            @endif
-                          >
-                            <div class="text-bold-600">
-                              {{ $item->name }}
-                            </div>
-                          </option> --}}
-
                           <optgroup label="{{ $item->name }}">
                             @foreach ($item->child as $subItem)
                               <option
@@ -247,6 +237,14 @@ Dropzone.autoDiscover = false;
 
 $(function() {
   'use strict';
+
+  $('#product-form').on('keyup keypress', function(e) {
+    const keyCode = e.keyCode || e.which;
+    if (keyCode === 13) {
+      e.preventDefault();
+      return false;
+    }
+  });
 
 	$(".select2-brand").select2({
     dropdownAutoWidth: true,

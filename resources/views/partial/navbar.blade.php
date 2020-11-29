@@ -41,8 +41,8 @@ if (Route::current()->getName() == 'home') {
               </li>
 
               <li>
-                <a href="#">
-                  Sertifikat
+                <a href="{{ route('sertifikasi') }}">
+                  Sertifikasi
                 </a>
               </li>
             </ul>
@@ -79,7 +79,9 @@ if (Route::current()->getName() == 'home') {
 
                     @foreach ($category->child as $subcategory)
                     <li>
-                      <a href="#">
+                      <a href="{{ route('product-list', [
+                        'category' => $subcategory->slug,
+                      ]) }}">
                         {{ $subcategory->name }}
                       </a>
                     </li>
@@ -99,7 +101,9 @@ if (Route::current()->getName() == 'home') {
                   @if(Cache::has('product-brands'))
                   @foreach ($brands as $brand)
                   <li>
-                    <a href="#">
+                    <a href="{{ route('product-list', [
+                      'brands' => $brand->slug,
+                    ]) }}">
                       {{ $brand->name }}
                     </a>
                   </li>
