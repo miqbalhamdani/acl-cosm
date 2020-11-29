@@ -71,6 +71,7 @@ class Product extends Model
     * @var array
     */
     protected $appends = [
+        'first_photo',
         'all_photos',
         'variants_collection',
         'first_variants',
@@ -79,13 +80,29 @@ class Product extends Model
     ];
 
     /**
+    * First Photo
+    *
+    * @return String
+    */
+    public function getFirstPhotoAttribute()
+    {
+        $path = env('PATH_PRODUCT') .'/'. $this->slug;
+
+        if (count($this->all_photos) < 1) {
+            return URL('img/no-image.png');
+        }
+
+        return URL($path .'/'. $this->all_photos[0]);
+    }
+
+    /**
     * All photos from photo and photo in variants
     *
     * @return String
     */
     public function getAllPhotosAttribute()
     {
-        $images = explode(',', $this->images);
+        $images = ($this->images) ? explode(',', $this->images) : null;
         $imagesCollection = collect($images);
 
         $variants = json_decode($this->variants);

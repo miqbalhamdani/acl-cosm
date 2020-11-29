@@ -41,8 +41,8 @@ if (Route::current()->getName() == 'home') {
               </li>
 
               <li>
-                <a href="#">
-                  Sertifikat
+                <a href="{{ route('sertifikasi') }}">
+                  Sertifikasi
                 </a>
               </li>
             </ul>

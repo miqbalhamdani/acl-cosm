@@ -3,109 +3,37 @@
 @section('content')
 
 <div class="about">
-  <div class="introduction-one">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-12 col-md-6">
-          <div class="introduction-one-image">
-            <div class="introduction-one-image__detail">
-              <img src="https://afinda.vn/html/Eliah/assets/images/introduction/IntroductionOne/img1.png" alt="background"/>
-              <img src="https://afinda.vn/html/Eliah/assets/images/introduction/IntroductionOne/img2.png" alt="background"/>
-            </div>
+  <div class="container post__body">
 
-            <div class="introduction-one-image__background">
-              <div class="background__item">
-                <div class="wrapper" ref="{bg1}">
-                  <img data-depth="0.5" src="https://afinda.vn/html/Eliah/assets/images/introduction/IntroductionOne/bg1.png" alt="background"/>
-                </div>
-              </div>
+    <div class="post-content">
+      <div class="post-content__header d-block">
+        <div class="post-content__header__content text-center">
+          <h2>PT Aulia Citra Lestari</h2>
+        </div>
+      </div>
 
-              <div class="background__item">
-                <div class="wrapper" ref="{bg2}">
-                  <img
-                    data-depth="0.3"
-                    data-invert-x=""
-                    data-invert-y=""
-                    src="https://afinda.vn/html/Eliah/assets/images/introduction/IntroductionOne/bg2.png"
-                    alt="background"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="post-content__body">
+        <div class="post-paragraph">
+          <span>PT Aulia Citra Lestari </span>merupakan perusahaan manufacture dalam bidang kosmetik dekoratif, hair care, personal care dan skin care yang telah berdiri lebih dari 15 tahun. Perusahaan kami telah bersertifikat CPKB sejak tahun 2008 sehingga kualitas serta keamanan produk kami tidak perlu diragukan lagi. Kami merupakan perusahaan maklon kosmetik yang melayani jasa pembuatan kosmetik dengan brand yang ingin anda miliki sampai pemenuhan perizinan produk kosmetik melalui BPOM.
         </div>
 
-        <div class="col-12 col-md-6">
-          <div class="introduction-one-content">
-            <h5>
-              ABOUT
-              <span> ELIAH</span>
-            </h5>
+        <div class="post-paragraph">
+          <span>PT Aulia Citra Lestari </span>sudah tersertifikasi BPOM dan Halal dari MUI. Kami memiliki tenaga apoteker dan research & development yang siap membantu anda membuat produk kosmetik mulai dari pemilihan bahan baku hingga registrasi produk dan merk. Perusahaan kami juga memiliki sertifikat halal yang dapat menjamin kehalalan, keamanan, dan kualitas produk anda.
+        </div>
 
-            <div class="section-title " style="margin-bottom: 1.875em">
-              <h2>When You Look Good </br> You Feel Good</h2>
-              <img src="https://afinda.vn/html/Eliah/assets/images/introduction/IntroductionOne/content-deco.png" alt="Decoration"/>
-            </div>
+        <div class="post-paragraph">
+          <span>Visi - </span>Menjadi perusahaan kosmetik lokal yang mengutamakan keamanan dan mutu produk dengan harga yang terjangkau.
+        </div>
 
-            <p>The top three occupations in the Beauty salons Industry Group are Hairdressers, hairstylists, & cosmetologists, Manicurists and pedicurists, Receptionists & information clerks, Supervisors of personal care and service workers, and Skincare specialists.</p>
-
-            <a class="btn -white" href="#">Appointment</a>
+        <div class="post-quote">
+          <h5><i>"Be a good partner for the customer."</i></h5>
+          <div class="post-quote__author"><i class="fas fa-quote-left"></i>
+            <p>Our Motto</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="introduction-two">
-    <div class="video-frame" style="height: 500px; width: 888.889px;">
-      <div class="video-frame__poster">
-        <img src="https://afinda.vn/html/Eliah/assets/images/introduction/IntroductionTwo/4.png" alt="Video poster"/>
-      </div>
-
-      <a class="btn -white -round" href="#" style="height: 50px; width: 50px; line-height: 50px; padding: 0px;">
-        <i class="fas fa-play"></i>
-      </a>
-    </div>
-
-    <div class="introduction-two-content">
-      <div class="container">
-        <div
-          class="introduction-two-content__item active"
-          data-cover="https://afinda.vn/html/Eliah/assets/images/introduction/IntroductionTwo/1.png"
-          data-src="https://www.youtube.com/embed/80e0QHPYRG4"
-        >
-          <a href="#">Body treatment</a>
-          <p>Supro was born</p>
-        </div>
-
-        <div
-          class="introduction-two-content__item"
-          data-cover="https://afinda.vn/html/Eliah/assets/images/introduction/IntroductionTwo/2.png"
-          data-src="https://www.youtube.com/embed/xn7jfVWWSio"
-        >
-          <a href="#">Professinal makeup</a>
-          <p>Supro was born</p>
-        </div>
-
-        <div
-          class="introduction-two-content__item"
-          data-cover="https://afinda.vn/html/Eliah/assets/images/introduction/IntroductionTwo/3.png"
-          data-src="https://www.youtube.com/embed/K3M-czGNUCg"
-        >
-          <a href="#">Maincure &amp; pedicure</a>
-          <p>Supro was born</p>
-        </div>
-
-        <div
-          class="introduction-two-content__item"
-          data-cover="https://afinda.vn/html/Eliah/assets/images/introduction/IntroductionTwo/4.png"
-          data-src="https://www.youtube.com/embed/hoPiGLf0ICA"
-        >
-          <a href="#">Hair cut &amp; Coloring</a>
-          <p>Supro was born</p>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
