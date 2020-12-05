@@ -6,6 +6,8 @@
 
 <section id="admin-product-form">
   <div class="col-md-12 col-12">
+    @include('admin.product.filterProduct')
+
     <div class="card">
       <div class="card-header d-flex justify-content-between">
         <h4 class="card-title">{{ $title }}</h4>

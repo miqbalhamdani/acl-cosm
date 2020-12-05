@@ -30,16 +30,25 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $category = ($request->input('category') === 'all') ? '' : $request->input('category');
+        $brand = ($request->input('brand') === 'all') ? '' : $request->input('brand');
+
         $param = [
             'perpage' => 20,
             'sort' => 'newest',
+            'name' => $request->input('name'),
+            'category' => $category,
+            'brands' => $brand,
         ];
 
         $data = [
             'title' => $this->title,
             'collection' => $this->model->findWithPaginate($param),
+            'brands' => $this->brand->get(),
+            'categories' => $this->category->getMainCategory(),
+            'input' => $request->input(),
         ];
 
         return view('admin.product.indexProduct', $data);
