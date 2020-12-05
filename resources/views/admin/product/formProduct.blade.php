@@ -161,7 +161,7 @@
                             @foreach ($item->child as $subItem)
                               <option
                                 value="{{ $subItem->id }}"
-                                @if(@$collection['brand_id'] == $subItem->id)
+                                @if(@$collection['category_id'] == $subItem->id)
                                   selected
                                 @endif
                               >
