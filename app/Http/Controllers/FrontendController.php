@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
+use App\Repositories\CategoryRepository;
 
 class FrontendController extends Controller
 {
     public function __construct(
-        ProductRepository $product
+        ProductRepository $product,
+        CategoryRepository $category
     )
     {
         $this->model = $product;
+        $this->category = $category;
     }
 
     /**
@@ -152,11 +155,16 @@ class FrontendController extends Controller
     public function detail($slug)
     {
         $product = $this->model->findBySlug($slug);
-        // if (!$product) return view('errors.404');
+        if (!$product) return view('errors.404');
+
+        // Get Parent Category
+        $category = $this->category->find($product->category->parent_id);
 
         $breadcrumbs = [
             'Home',
             'Products',
+            @$category->name,
+            $product->category->name,
             $product->name,
         ];
 
