@@ -5,8 +5,13 @@
         <div class="cart-items__wrapper">
           <div class="navigation-sidebar">
             <div class="search-box">
-              <form>
-                <input type="text" placeholder="What are you looking for?"/>
+              <form method="GET" action="{{ route('product-list') }}">
+                <input
+                  type="text"
+                  placeholder="What are you looking for?"
+                  name="search"
+                  value="{{ @$input['search'] }}"
+                />
                 <button>
                   <img src="{{ URL('fe/images/header/search-icon.png') }}" alt="Search icon"/>
                 </button>
@@ -15,36 +20,82 @@
 
             <div class="navigator-mobile">
               <ul>
+                <li><a href="{{ route('home') }}">Home</a></li>
+
                 <li class="relative">
                   <a class="dropdown-menu-controller" href="#">
-                    Home
+                    About
                     <span class="dropable-icon">
                       <i class="fas fa-angle-down"></i>
                     </span>
                   </a>
 
                   <ul class="dropdown-menu">
-                    <li><a href="homepages/homepage1.html">Beauty Salon</a></li>
-                    <li><a href="homepages/homepage2.html">Makeup Salon</a></li>
-                    <li><a href="homepages/homepage3.html">Natural Shop</a></li>
-                    <li><a href="homepages/homepage4.html">Spa Shop</a></li>
-                    <li><a href="homepages/homepage5.html">Mask Shop</a></li>
-                    <li><a href="homepages/homepage6.html">Skincare Shop</a></li>
+                    <li><a href="{{ route('company-profile') }}">Company Profile</a></li>
+                    <li><a href="{{ route('sertifikasi') }}">Sertifikasi</a></li>
                   </ul>
                 </li>
 
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="{{ route('layanan') }}">Layanan</a></li>
 
+                {{--  --}}
+                <!-- IN HOUSE BRAND -->
                 <li>
                   <a class="dropdown-menu-controller" href="#">
-                    Shop
+                    In-house Brand
                     <span class="dropable-icon">
                       <i class="fas fa-angle-down"></i>
                     </span>
                   </a>
 
+                  @php
+                    $categories = Cache::get('product-categories');
+                    $brands = Cache::get('product-brands');
+                  @endphp
+
                   <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-menu-controller" href="#">
+                        Brands
+                        <span class="dropable-icon">
+                          <i class="fas fa-angle-down"></i>
+                        </span>
+                      </a>
+
+                      <ul class="dropdown-menu">
+                        @foreach ($brands as $brand)
+                        <li><a href="{{ route('product-list', ['brands' => $brand->slug]) }}">
+                          {{ $brand->name }}
+                        </a></li>
+                        @endforeach
+                      </ul>
+                    </li>
+
+                    <li>
+                      @foreach ($categories as $category)
+                      @if (!$category->parent_id)
+
+                      <a class="dropdown-menu-controller" href="#">
+                        {{ $category->name }}
+                        <span class="dropable-icon">
+                          <i class="fas fa-angle-down"></i>
+                        </span>
+                      </a>
+
+                      <ul class="dropdown-menu">
+                        @foreach ($category->child as $subcategory)
+                        <li><a href="{{ route('product-list', ['category' => $subcategory->slug]) }}">
+                          {{ $subcategory->name }}
+                        </a></li>
+                        @endforeach
+                      </ul>
+
+                      @endif
+                      @endforeach
+                    </li>
+                  </ul>
+
+                  {{-- <ul class="dropdown-menu">
                     <ul class="dropdown-menu__col">
                       <li><a href="shop-fullwidth-4col.html">Shop Fullwidth 4 Columns</a></li>
                       <li><a href="shop-fullwidth-5col.html">Shop Fullwidth 5 Columns</a></li>
@@ -71,51 +122,38 @@
                         <img src="{{ URL('fe/images/header/dropdown-menu-banner.png') }}" alt="New product banner.html"/>
                       </a>
                     </ul>
-                  </ul>
+                  </ul> --}}
                 </li>
 
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{ route('contact') }}">Kontak</a></li>
               </ul>
             </div>
 
             <div class="navigation-sidebar__footer">
-              <select class="customed-select -borderless" name="currency">
-                <option value="usd">USD</option>
-                <option value="vnd">VND</option>
-                <option value="yen">YEN</option>
-              </select>
-
-              <select class="customed-select -borderless" name="currency">
-                <option value="en">EN</option>
-                <option value="vi">VI</option>
-                <option value="jp">JP</option>
-              </select>
             </div>
 
             <div class="social-icons ">
-              <ul>
+              <ul style="display: flex; flex-direction: column;">
                 <li>
-                  <a href="https://www.facebook.com/" style="'color: undefined'">
-                    <i class="fab fa-facebook-f"></i>
+                  <a href="https://shopee.co.id/acl_cosm">
+                    <img
+                      src="{{ URL('img/shopee-icon.png') }}"
+                      style="
+                        width: 20px;
+                    ">
+                    Shopee Official
                   </a>
                 </li>
 
                 <li>
-                  <a href="https://twitter.com" style="'color: undefined'">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="https://instagram.com/" style="'color: undefined'">
-                    <i class="fab fa-instagram"> </i>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="https://www.youtube.com/" style="'color: undefined'">
-                    <i class="fab fa-youtube"></i>
+                  <a href="https://www.tokopedia.com/aclcosm">
+                    <img
+                      src="{{ URL('img/tokopedia-icon.png') }}"
+                      style="
+                        width: 30px;
+                        margin: 5px -3px -8px -13px;
+                    ">
+                    Tokopedia Official
                   </a>
                 </li>
               </ul>

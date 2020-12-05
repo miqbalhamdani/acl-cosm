@@ -128,8 +128,13 @@ if (Route::current()->getName() == 'home') {
         </a>
 
         <div class="search-box">
-          <form>
-            <input type="text" placeholder="What are you looking for?" name="search" />
+          <form method="GET" action="{{ route('product-list') }}">
+            <input
+              type="text"
+              placeholder="What are you looking for?"
+              name="search"
+              value="{{ @$input['search'] }}"
+            />
             <button>
               <img src="{{ URL('fe/images/header/search-icon.png') }}" alt="Search icon" /></button>
           </form>

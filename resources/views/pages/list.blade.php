@@ -37,3 +37,14 @@
 </div>
 
 @endsection
+
+@push('css')
+<style>
+  @media screen and (max-width: 420px) {
+    .shop-sidebar__content {
+      display: none;
+    }
+  }
+</style>
+@endpush
+

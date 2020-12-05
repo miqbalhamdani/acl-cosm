@@ -131,6 +131,7 @@ class FrontendController extends Controller
         $param = [
             'perpage' => 20,
             'sort' => 'newest',
+            'name' => $request->input('search'),
             'category' => $request->input('category'),
             'brands' => $request->input('brands'),
         ];
@@ -141,6 +142,7 @@ class FrontendController extends Controller
             'categories' => \Cache::get('product-categories'),
             'brands' => \Cache::get('product-brands'),
             'collection' => $this->model->findWithPaginate($param),
+            'input' => $request->input(),
         ];
 
         return view('pages.list', $data);

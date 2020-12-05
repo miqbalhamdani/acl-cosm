@@ -8,29 +8,52 @@
 
   <div class="product-thumb">
     <a class="product-thumb__image" href="{{ URL($item->url) }}">
-      @if (count($item->all_photos) > 1)
-        @php
-          $path = env('PATH_PRODUCT') .'/'. $item->slug .'/';
-          $count = (count($item->all_photos) > 1) ? 2 : 1;
-        @endphp
-        @for ($i = 0; $i < $count; $i++)
-          @if (File::isFile($path . $item->all_photos[$i]))
-            <img
-              src="{{ URL($path . $item->all_photos[$i]) }}"
-              style="max-height: 265px; min-height: 262px;"
-              alt="Product image"
-            />
-          @else
-            <img
-              src="{{ URL('img/no-image.png') }}"
-              style="max-height: 265px; min-height: 262px;"
-              alt="Product image"
-            />
-          @endif
-        @endfor
-      @else
+      <!-- NO IMAGE -->
+      @if (count($item->all_photos) < 1)
         <img
           src="{{ URL('img/no-image.png') }}"
+          style="max-height: 265px; min-height: 262px;"
+          alt="Product image"
+        />
+      @endif
+
+      @php
+        $path = env('PATH_PRODUCT') .'/'. $item->slug .'/';
+      @endphp
+
+      <!-- ONE IMAGE -->
+      @if (count($item->all_photos) === 1)
+        @php
+          $imageOne =  File::isFile($path . $item->all_photos[0])
+              ? $path . $item->all_photos[0]
+              : 'img/no-image.png';
+        @endphp
+
+        <img
+          src="{{ URL($imageOne) }}"
+          style="max-height: 265px; min-height: 262px;"
+          alt="Product image"
+        />
+      @endif
+
+      <!-- TWO IMAGE -->
+      @if (count($item->all_photos) > 1)
+        @php
+          $imageTwo =  File::isFile($path . $item->all_photos[0])
+              ? $path . $item->all_photos[0]
+              : 'img/no-image.png';
+        @endphp
+
+        @if (File::isFile($path . $item->all_photos[1]))
+        <img
+          src="{{ URL($path . $item->all_photos[1]) }}"
+          style="max-height: 265px; min-height: 262px;"
+          alt="Product image"
+        />
+        @endif
+
+        <img
+          src="{{ URL($imageTwo) }}"
           style="max-height: 265px; min-height: 262px;"
           alt="Product image"
         />
