@@ -38,7 +38,7 @@
 
     <div class="footer-one__body">
       <div class="row">
-        <div class="col-12 col-md-6 col-lg-5">
+        <div class="col-12 col-md-6 col-lg-4">
           <div class="footer__section -info">
             <h5 class="footer-title">Contact info</h5>
             <p>Address: <br>
@@ -55,7 +55,21 @@
           </div>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="footer__section -links">
+            <h5 class="footer-title">Locations</h5>
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15862.843495350153!2d106.9996228!3d-6.3016691!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4dd83a342acf520f!2sPT%20Aulia%20Citra%20Lestari!5e0!3m2!1sid!2sid!4v1606621780282!5m2!1sid!2sid"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              allowfullscreen="">
+            </iframe>
+          </div>
+        </div>
+
+        {{-- <div class="col-12 col-md-6 col-lg-3">
           <div class="footer__section -links">
             <h5 class="footer-title">Infomation</h5>
             <ul>
@@ -66,9 +80,9 @@
               <li><a href="contact.html">Terms &amp; Condition</a></li>
             </ul>
           </div>
-        </div>
+        </div> --}}
 
-        <div class="col-12 col-md-6 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-3 offset-lg-1">
           <div class="footer__section -links">
             <h5 class="footer-title">Keep In Touch</h5>
 
