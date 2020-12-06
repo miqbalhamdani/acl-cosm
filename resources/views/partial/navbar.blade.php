@@ -1,7 +1,7 @@
 @php
 $style = '-style-3';
 $class = '-white';
-$logo = '';
+$logo = 'menu-header';
 
 if (Route::current()->getName() == 'home') {
   $style = '-style-1';
@@ -14,7 +14,8 @@ if (Route::current()->getName() == 'home') {
   <div class="container">
     <div class="menu__wrapper">
       <a class="{{ $logo }}" href="{{ route('home') }}">
-        <img src="{{ URL('fe/images/logo' .$class. '.png') }}" alt="Logo" />
+        <img src="{{ URL('img/logo/logo.png') }}" alt="Logo"/>
+        <span>Aulia Citra Lestari</span>
       </a>
 
       <div class="navigator {{ $class }}">
@@ -158,5 +159,25 @@ if (Route::current()->getName() == 'home') {
   font-size: 19px;
   font-weight: bold;
 }
+
+.-style-1 .menu__wrapper .menu-logo,
+.-style-3 .menu__wrapper .menu-header {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.-style-1 .menu__wrapper .menu-logo img,
+.-style-3 .menu__wrapper .menu-header img {
+  height: 70px;
+  width: auto;
+}
+.-style-1 .menu__wrapper .menu-logo span,
+.-style-3 .menu__wrapper .menu-header span {
+  padding-left: 1rem;
+  font-weight: 600;
+  font-size: 20px;
+  color: #008135;
+}
+
 </style>
 @endpush

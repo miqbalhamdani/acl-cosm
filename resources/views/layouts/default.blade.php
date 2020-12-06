@@ -27,8 +27,8 @@
     <meta property="og:locale" content="id_ID">
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="{{ URL('img/sleep-project-icon.svg') }}" type="image/x-icon" /> <!-- here -->
-		<link rel="apple-touch-icon" href="img/sleep-project-icon.svg"> <!-- here -->
+		<link rel="shortcut icon" href="{{ URL('img/logo/logo.png') }}" type="image/x-icon" /> <!-- here -->
+		<link rel="apple-touch-icon" href="{{ URL('img/logo/logo.png') }}"> <!-- here -->
 
 		<!-- Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;700;900&amp;display=swap"/>

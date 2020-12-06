@@ -3,7 +3,8 @@
     <div class="footer-one__header">
       <div class="footer-one__header__logo">
         <a href="/homepages/homepage1">
-          <img src="{{ URL('fe/images/logo.png') }}" alt="Logo"/>
+          <img src="{{ URL('img/logo/logo.png') }}" alt="Logo"/>
+          <span>Aulia Citra Lestari</span>
         </a>
       </div>
 
@@ -125,3 +126,24 @@
     </div>
   </div>
 </div>
+
+@push('css-body')
+<style>
+.footer-one__header__logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.footer-one__header__logo a img {
+  height: 70px;
+  width: auto;
+}
+.footer-one__header__logo span {
+  padding-left: 1rem;
+  font-weight: 600;
+  font-size: 20px;
+  color: #008135;
+}
+
+</style>
+@endpush
