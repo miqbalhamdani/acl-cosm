@@ -126,24 +126,3 @@
     </div>
   </div>
 </div>
-
-@push('css-body')
-<style>
-.footer-one__header__logo a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-.footer-one__header__logo a img {
-  height: 70px;
-  width: auto;
-}
-.footer-one__header__logo span {
-  padding-left: 1rem;
-  font-weight: 600;
-  font-size: 20px;
-  color: #008135;
-}
-
-</style>
-@endpush

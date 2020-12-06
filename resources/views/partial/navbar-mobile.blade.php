@@ -38,7 +38,6 @@
 
                 <li><a href="{{ route('layanan') }}">Layanan</a></li>
 
-                {{--  --}}
                 <!-- IN HOUSE BRAND -->
                 <li>
                   <a class="dropdown-menu-controller" href="#">
