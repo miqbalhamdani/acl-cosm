@@ -94,7 +94,7 @@
           </div>
 
           <div class="row">
-            <div class="col-sm-12 col-md-6 p-0">
+            <div class="col-sm-12 col-md-5 p-0">
               <div class="table-responsive">
                 <table class="table table-bordered mb-0">
                   <thead>
@@ -106,32 +106,7 @@
 
                   <tbody>
                     <VariantItem
-                      v-for="(item, index) in firstList"
-                      :key="index"
-                      :index="index"
-                      :item="item"
-                      :slug="slug"
-                      @image-set="setImage"
-                      @image-remove="removeImage"
-                    />
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div class="col-sm-12 col-md-6 p-0">
-              <div class="table-responsive">
-                <table class="table table-bordered mb-0">
-                  <thead>
-                    <tr>
-                      <th>{{ name }} Name</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <VariantItem
-                      v-for="(item, index) in secondList"
+                      v-for="(item, index) in form"
                       :key="index"
                       :index="index"
                       :item="item"
@@ -198,22 +173,6 @@ export default {
     sizeImages() {
       const list = this.form.map((item) => item.image);
       return list.join(',');
-    },
-
-    halfForm() {
-      return Math.ceil(this.totalForm / 2);
-    },
-
-    totalForm() {
-      return this.form.length;
-    },
-
-    firstList() {
-      return this.form.slice(0, this.halfForm);
-    },
-
-    secondList() {
-      return this.form.slice(this.halfForm, this.totalForm);
     },
   },
 
