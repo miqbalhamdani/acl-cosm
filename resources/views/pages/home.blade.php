@@ -8,6 +8,8 @@
 
 <x-home.about />
 
+@include('components.home.top-product', ['topProducts' => $topProducts])
+
 <x-home.testimonial />
 
 <x-home.professional-team />

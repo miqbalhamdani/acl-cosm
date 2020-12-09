@@ -77,4 +77,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']] , function()
     Route::post('product/images/upload', 'ProductController@uploadImage');
     Route::post('product/images/remove', 'ProductController@removeImage');
 
+    /*
+    |--------------------------------------------------------------------------
+    | TOP PRODUCT
+    |--------------------------------------------------------------------------
+    */
+    Route::get('top-product', 'TopProductController@index');
+    Route::get('top-product/add', 'TopProductController@store');
+    Route::post('top-product/add', 'TopProductController@store');
+    Route::get('top-product/edit/{id}', 'TopProductController@store');
+    Route::post('top-product/edit/{id}', 'TopProductController@store');
+    Route::get('top-product/delete/{id}', 'TopProductController@destroy');
+
 });

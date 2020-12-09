@@ -23,6 +23,12 @@
       "name": "Product",
       "i18n": "Product",
       "icon": "list"
+    },
+    {
+      "url": "/admin/top-product",
+      "name": "Top Product",
+      "i18n": "Top Product",
+      "icon": "gift"
     }
   ]
 }
