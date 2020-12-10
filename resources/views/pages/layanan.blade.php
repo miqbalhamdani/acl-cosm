@@ -8,13 +8,17 @@
     <div class="post-content">
       <div class="post-content__header d-block">
         <div class="post-content__header__content">
-          <h2>Jasa Pembuatan Kosmetik (OEM)</h2>
+          <h2>Original Equipment Manufacture (OEM)</h2>
         </div>
       </div>
 
       <div class="post-content__body">
         <div class="post-paragraph">
-          <span>PT Aulia Citra Lestari </span>memberikan jasa produksi kosmetik berdasarkan desain dan spesifikasi produk sesuai dengan keinginan anda. Anda dapat memberikan spesifikasi produk anda dan kami akan menuntun, memberi saran, membantu, dan memproduksi produk kosmetik yang sesuai permintaan anda dengan mengikuti peraturan yang ada.
+          <span>Perusahaan OEM (Original Equipment Manufacturer)</span> adalah suatu perusahaan atau organisasi yang merancang dan memproduksi produk sesuai dengan spesifikasi yang ditentukan perusahaan OEM dan dijual ke perusahaan pembeli. Dengan kata lain, perusahaan OEM melakukan produksi produk atas nama perusahaan lain, setelah itu perusahaan pembeli memasarkan produk tersebut dibawah merek mereka sendiri.
+        </div>
+
+        <div class="post-paragraph">
+          <span>PT Aulia Citra Lestari</span> memberikan jasa produksi kosmetik berdasarkan desain dan spesifikasi produk sesuai dengan keinginan anda. Anda dapat memberikan spesifikasi produk anda dan kami akan menuntun, memberi saran, membantu, dan memproduksi produk kosmetik yang sesuai permintaan anda dengan mengikuti peraturan yang ada.
         </div>
       </div>
     </div>

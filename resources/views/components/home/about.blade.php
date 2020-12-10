@@ -25,22 +25,19 @@
 
       <div class="col-12 col-md-6">
         <div class="introduction-three__content">
-          <h5>About Eliah</h5>
+          <h5>About Aulia Citra Lestari</h5>
 
           <h3>
-            <span>Natural</span>skian care
-            <br/>
-            professional
+            <span>Ingin punya bisnis kosmetik sendiri? Tentu Bisa!</span>
           </h3>
 
-          <div class="more-description">
-            <img src="https://afinda.vn/html/Eliah/assets/images/introduction/IntroductionThree/decoration.png" alt="Decoration"/>
-            <span>Best treatment for curing stubborn whiteheads. Your skin loves it</span>
-          </div>
+          <p>Terdapat berbagai macam cara untuk berbisnis, salah satunya menjadi pengusaha dalam bidang kosmetik. Peluang bisnis kosmetik sangat digemari pebisnis saat ini. Dikutip dari situs Kementrian Perindustrian, pemerintah mencatat kenaikan perusahaan yang terdaftar dalam sektor industri kosmetik. Peningkatan ini salahsatunya dipengaruhi oleh perusahaan jasa maklon yang memfasilitasi kemudahan memproduksi kosmetik milik sendiri.</p>
 
-          <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis pendisse ultrices gravida. Risus commodo viverra lacus vel facilisis. </p>
+          <p>PT Aulia Citra Lestari adalah perusahaan jasa maklon kosmetik dengan visi “Be A Good Partner For Customer”, memberi jalan bagi pebisnis yang ingin terjun dalam bisnis kosmetik dengan merek sendiri. </p>
 
-          <a class="btn -dark" href="#">Read more</a>
+          <a class="btn -dark" href="{{ route('layanan') }}">
+            Selengkapnya
+          </a>
         </div>
       </div>
     </div>
