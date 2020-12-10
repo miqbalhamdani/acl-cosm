@@ -1,8 +1,32 @@
 <div class="slider -style-2 slider-arrow-middle">
   <div class="slider__carousel mb-0">
 
-    <!-- SLIDE ONE -->
     <div class="slider__carousel__item slider-1">
+      <div class="container">
+        <div class="slider-background">
+          <img
+            class="slider-background"
+            src="{{ URL('/img/banner/banner-home-1.png') }}"
+            alt="Slider background"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="slider__carousel__item slider-2">
+      <div class="container">
+        <div class="slider-background">
+          <img
+            class="slider-background"
+            src="{{ URL('/img/banner/banner-home-2.png') }}"
+            alt="Slider background"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE ONE -->
+    {{-- <div class="slider__carousel__item slider-1">
       <div class="container">
         <div class="slider-background">
           <img
@@ -128,6 +152,6 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
   </div>
 </div>

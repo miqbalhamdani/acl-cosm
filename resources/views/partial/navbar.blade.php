@@ -150,34 +150,3 @@ if (Route::current()->getName() == 'home') {
     </div>
   </div>
 </div>
-
-
-@push('css-body')
-<style>
-.menu__wrapper .navigator > ul > li .dropdown-menu li.title {
-  margin-bottom: 10px;
-  font-size: 19px;
-  font-weight: bold;
-}
-
-.-style-1 .menu__wrapper .menu-logo,
-.-style-3 .menu__wrapper .menu-header {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-.-style-1 .menu__wrapper .menu-logo img,
-.-style-3 .menu__wrapper .menu-header img {
-  height: 70px;
-  width: auto;
-}
-.-style-1 .menu__wrapper .menu-logo span,
-.-style-3 .menu__wrapper .menu-header span {
-  padding-left: 1rem;
-  font-weight: 600;
-  font-size: 20px;
-  color: #008135;
-}
-
-</style>
-@endpush

@@ -27,11 +27,15 @@
     <meta property="og:locale" content="id_ID">
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="{{ URL('img/logo/logo.png') }}" type="image/x-icon" /> <!-- here -->
-		<link rel="apple-touch-icon" href="{{ URL('img/logo/logo.png') }}"> <!-- here -->
+		<link rel="shortcut icon" href="{{ URL('img/logo/logo.png') }}" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="{{ URL('img/logo/logo.png') }}">
 
 		<!-- Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;700;900&amp;display=swap"/>
+
+    @if (Route::current()->getName() == 'home')
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    @endif
 
     <!--build:css assets/css/styles.min.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
@@ -41,6 +45,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('fe/css/jquery.modal.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('fe/css/bootstrap-drawer.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('fe/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('fe/css/custom.css')}}">
     <!--endbuild-->
 
     <!-- BEGIN: Laravel Vue-->

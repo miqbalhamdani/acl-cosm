@@ -1,0 +1,108 @@
+/* TITLE NAVBAR HEADER IN BRANDS HOUSE */
+.menu .menu__wrapper .navigator > ul > li .dropdown-menu li.title {
+  margin-bottom: 10px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+/* LOGO HEADER */
+.menu.-style-1 .menu__wrapper .menu-logo,
+.menu.-style-3 .menu__wrapper .menu-header {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.menu.-style-1 .menu__wrapper .menu-logo img,
+.menu.-style-3 .menu__wrapper .menu-header img {
+  height: 70px;
+  width: auto;
+}
+.menu.-style-1 .menu__wrapper .menu-logo span,
+.menu.-style-3 .menu__wrapper .menu-header span {
+  padding-left: 1rem;
+  font-weight: 600;
+  font-size: 20px;
+  color: #008135;
+}
+
+/* LOGO FOOTER */
+.footer-one__header__logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.footer-one__header__logo a img {
+  height: 70px;
+  width: auto;
+}
+.footer-one__header__logo span {
+  padding-left: 1rem;
+  font-weight: 600;
+  font-size: 20px;
+  color: #008135;
+}
+
+/* SIDEBAR PRODUCT LIST */
+.shop-sidebar__content .navigator-category {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+.shop-sidebar__content .navigator-category a {
+  color: #111;
+  font-size: 0.875em;
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  text-transform: capitalize;
+  position: relative;
+  padding: 8px 0;
+}
+.shop-sidebar__content .navigator-category .dropdown-menu-title {
+  padding-bottom: 1rem;
+  font-size: 0.875em;
+  font-weight: 600;
+}
+.shop-sidebar__content .navigator-category a .dropable-icon {
+  float: right;
+  padding-right: 75px;
+}
+.shop-sidebar__content .navigator-category .dropdown-menu {
+  margin-bottom: 1rem;
+}
+.shop-sidebar__content .navigator-category .dropdown-menu li {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+/* BANNER HOMEPAGE */
+.slider.-style-2 .slider__carousel__item {
+  height: 450px;
+}
+
+/* TESTIMONIAL HOMEPAGE */
+.testimonial .testimonial-slider .testimonial-card {
+  width: calc((100% / 5) - 20px);
+}
+.testimonial .testimonial-slider .testimonial-card .testimonial-image img {
+  width: 200px;
+}
+.testimonial .testimonial-slider .testimonial-card .testimonial-content {
+  margin-top: 2rem;
+}
+.testimonial .testimonial-slider .testimonial-card .testimonial-content h3 {
+  color: #111;
+  font-size: 1.125em;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 0.55556em;
+}
+.testimonial .testimonial-slider .testimonial-card .testimonial-content p {
+  color: #111;
+  font-size: 0.9375em;
+  font-weight: normal;
+  line-height: 1.625em;
+  margin-top: 1rem;
+}

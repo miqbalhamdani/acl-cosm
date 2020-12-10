@@ -4,6 +4,7 @@ return [
   "Category" => "Category",
   "Brand" => "Brand",
   "Product" => "Product",
+  "Top Product" => "Top Product",
   "eCommerce" => "eCommerce",
   "Analytics" => "Analytics",
   "Apps" => "Apps",

@@ -5,16 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use App\Repositories\CategoryRepository;
+use App\Repositories\CustomRepository;
 
 class FrontendController extends Controller
 {
     public function __construct(
         ProductRepository $product,
-        CategoryRepository $category
+        CategoryRepository $category,
+        CustomRepository $custom
     )
     {
         $this->model = $product;
         $this->category = $category;
+        $this->custom = $custom;
     }
 
     /**
@@ -24,7 +27,11 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return view('pages.home');
+        $data = [
+            'topProducts' => $this->custom->topProduct(),
+        ];
+
+        return view('pages.home', $data);
     }
 
     /**
