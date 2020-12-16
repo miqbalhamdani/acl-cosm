@@ -8,7 +8,7 @@
         </a>
       </div>
 
-      <div class="footer-one__header__social">
+      {{-- <div class="footer-one__header__social">
         <div class="social-icons -border">
           <ul>
             <li>
@@ -33,7 +33,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> --}}
     </div>
 
     <div class="footer-one__body">
@@ -69,19 +69,6 @@
           </div>
         </div>
 
-        {{-- <div class="col-12 col-md-6 col-lg-3">
-          <div class="footer__section -links">
-            <h5 class="footer-title">Infomation</h5>
-            <ul>
-              <li><a href="about.html">About us</a></li>
-              <li><a href="contact.html">Careers</a></li>
-              <li><a href="contact.html">Delivery Information</a></li>
-              <li><a href="contact.html">Privacy Policy</a></li>
-              <li><a href="contact.html">Terms &amp; Condition</a></li>
-            </ul>
-          </div>
-        </div> --}}
-
         <div class="col-12 col-md-6 col-lg-3 offset-lg-1">
           <div class="footer__section -links">
             <h5 class="footer-title">Keep In Touch</h5>
@@ -91,7 +78,6 @@
                 <img
                   src="{{ URL('img/shopee-icon.png') }}"
                   style="
-                    margin-top: -5px;
                     width: 20px;
                 ">
               </div>
@@ -109,7 +95,7 @@
                   src="{{ URL('img/tokopedia-icon.png') }}"
                   style="
                     margin-left: -5px;
-                    margin-top: -10px;
+                    margin-top: -5px;
                     width: 30px;
                 ">
               </div>
@@ -117,6 +103,42 @@
               <div class="contact-info__item__detail">
                 <p><a href="https://www.tokopedia.com/aclcosm">
                   Tokopedia Official
+                </a></p>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <div class="contact-info__item__icon">
+                <img
+                  src="{{ URL('img/google-icon.png') }}"
+                  style="
+                    margin-left: -4px;
+                    margin-top: -3px;
+                    width: 25px;
+                ">
+              </div>
+
+              <div class="contact-info__item__detail">
+                <p><a href="https://g.page/r/CQ9Szyo0OthNEBM">
+                  Google Bussiness
+                </a></p>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <div class="contact-info__item__icon">
+                <img
+                  src="{{ URL('img/instagram-icon.png') }}"
+                  style="
+                  margin-left: -3px;
+                  margin-top: 0px;
+                  width: 25px;
+                ">
+              </div>
+
+              <div class="contact-info__item__detail">
+                <p><a href="https://www.instagram.com/aclcosm_official/">
+                  Instagram
                 </a></p>
               </div>
             </div>

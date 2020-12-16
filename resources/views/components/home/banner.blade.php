@@ -9,6 +9,19 @@
             src="{{ URL('/img/banner/banner-home-1.png') }}"
             alt="Slider background"
           />
+
+          <div class="slider-content">
+            <div
+              data-animation-in="fadeInUp"
+              data-animation-out="fadeInDown"
+              data-animation-delay="0.4"
+              class="slider-content-1"
+            >
+              <a class="btn" href="{{ route('contact') }}">
+                Hubungi Kami
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -21,6 +34,19 @@
             src="{{ URL('/img/banner/banner-home-2.png') }}"
             alt="Slider background"
           />
+
+          <div class="slider-content">
+            <div
+              data-animation-in="fadeInUp"
+              data-animation-out="fadeInDown"
+              data-animation-delay="0.4"
+              class="slider-content-2"
+            >
+              <a class="btn" href="{{ route('product-list') }}">
+                All Products
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
