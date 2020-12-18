@@ -73,7 +73,9 @@ class RegisterController extends Controller
 
     // Register
     public function showRegistrationForm(){
-      $pageConfigs = ['bodyCustomClass' => 'bg-full-screen-image blank-page'];  
+      return redirect('/');
+
+      $pageConfigs = ['bodyCustomClass' => 'bg-full-screen-image blank-page'];
 
      return view('/auth/register', [
          'pageConfigs' => $pageConfigs

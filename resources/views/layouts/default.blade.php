@@ -77,7 +77,7 @@
     <script src="{{asset('fe/js/jquery.modal.min.js')}}"></script>
     <script src="{{asset('fe/js/bootstrap-drawer.min.js')}}"></script>
     <script src="{{asset('fe/js/jquery.countdown.min.js')}}"></script>
-    <script src="{{asset('fe/js/main.min.js')}}"></script>
+    <script src="{{asset('fe/js/main.min.js?v=1.0.1')}}"></script>
     <!--endbuild-->
 
     <!-- START: Laravel Vue -->
