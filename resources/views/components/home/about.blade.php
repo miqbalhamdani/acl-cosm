@@ -1,5 +1,5 @@
 <div class="introduction-three">
-  <div class="container">
+  <div class="container mt-5">
     <div class="row align-items-center">
       <div class="col-12 col-md-6">
         <div class="introduction-three__image">
@@ -10,13 +10,13 @@
           <div class="introduction-three__image__detail">
             <div class="image__item">
               <div class="wrapper">
-                <img data-depth="0.3" src="https://afinda.vn/html/Eliah/assets/images/introduction/IntroductionThree/img-1.png" alt="image"/>
+                {{-- <img data-depth="0.3" src="https://afinda.vn/html/Eliah/assets/images/introduction/IntroductionThree/img-1.png" alt="image"/> --}}
               </div>
             </div>
 
             <div class="image__item">
               <div class="wrapper">
-                <img data-depth="0.8" src="https://afinda.vn/html/Eliah/assets/images/introduction/IntroductionThree/img-2.png" alt="image"/>
+                {{-- <img data-depth="0.8" src="https://afinda.vn/html/Eliah/assets/images/introduction/IntroductionThree/img-2.png" alt="image"/> --}}
               </div>
             </div>
           </div>

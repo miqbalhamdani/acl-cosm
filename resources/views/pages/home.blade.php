@@ -4,7 +4,7 @@
 
 <x-home.banner />
 
-<x-home.card />
+{{-- <x-home.card /> --}}
 
 @include('components.home.top-product',
   ['topProducts' => $topProducts]
@@ -14,6 +14,6 @@
 
 <x-home.testimonial />
 
-<x-home.professional-team />
+{{-- <x-home.professional-team /> --}}
 
 @endsection

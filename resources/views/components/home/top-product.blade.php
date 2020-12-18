@@ -3,7 +3,7 @@
 <div class="product-tab -style-1">
   <div class="container">
     <div class="section-title -center" style="margin-bottom: 1.875em">
-      <h2>New arrivals</h2>
+      <h2>In-house Brand</h2>
       <img src="{{ URL('fe/images/introduction/IntroductionOne/content-deco.png') }}" alt="Decoration"/>
     </div>
 

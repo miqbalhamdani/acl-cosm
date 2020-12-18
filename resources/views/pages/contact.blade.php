@@ -81,7 +81,7 @@
 
       <div class="col-12 col-md-6">
         <h3 class="contact-title">
-          Get in touch
+          Ask a question
         </h3>
 
         <div class="contact-form">
