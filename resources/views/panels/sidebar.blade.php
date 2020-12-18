@@ -4,9 +4,9 @@
       <div class="navbar-header">
       <ul class="nav navbar-nav flex-row">
       <li class="nav-item mr-auto">
-          <a class="navbar-brand" href="{{asset('/')}}">
+          <a class="navbar-brand" href="{{asset('/admin')}}">
           <div class="brand-logo">
-            <img src="{{asset('images/logo/logo.png')}}" class="logo" alt="">
+            <img src="{{asset('img/logo/logo.png')}}" class="logo" alt="">
           </div>
           <h2 class="brand-text mb-0">
             @if(!empty($configData['templateTitle']) && isset($configData['templateTitle']))
@@ -58,7 +58,7 @@
 @endif
 {{-- horizontal-menu --}}
 @if($configData['mainLayoutType'] == 'horizontal-menu')
-<div class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-light navbar-without-dd-arrow 
+<div class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-light navbar-without-dd-arrow
 @if($configData['navbarType'] === 'navbar-static') {{'navbar-sticky'}} @endif" role="navigation" data-menu="menu-wrapper">
   <div class="navbar-header d-xl-none d-block">
       <ul class="nav navbar-nav flex-row">
@@ -90,7 +90,7 @@
       @if(!empty($menuData[1]) && isset($menuData[1]))
           @foreach ($menuData[1]->menu as $menu)
           <li class="@if(isset($menu->submenu)){{'dropdown'}} @endif nav-item" data-menu="dropdown">
-          <a class="@if(isset($menu->submenu)){{'dropdown-toggle'}} @endif nav-link" href="{{asset($menu->url)}}" 
+          <a class="@if(isset($menu->submenu)){{'dropdown-toggle'}} @endif nav-link" href="{{asset($menu->url)}}"
             @if(isset($menu->submenu)){{'data-toggle=dropdown'}} @endif @if(isset($menu->newTab)){{"target=_blank"}}@endif>
               <i class="menu-livicon" data-icon="{{$menu->icon}}"></i>
               <span>{{ __('locale.'.$menu->name)}}</span>
