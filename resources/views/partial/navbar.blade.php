@@ -1,24 +1,24 @@
 @php
-$style = '-style-3';
-$class = '-white';
-$logo = 'menu-header';
+// $style = '-style-3';
+// $class = '-white';
+// $logo = 'menu-header';
 
-if (Route::current()->getName() == 'home') {
+// if (Route::current()->getName() == 'home') {
   $style = '-style-1';
   $class = '';
   $logo = 'menu-logo';
-}
+// }
 @endphp
 
-<div class="menu {{ $style }}">
+<div class="menu -style-1">
   <div class="container">
     <div class="menu__wrapper">
-      <a class="{{ $logo }}" href="{{ route('home') }}">
+      <a class="menu-logo" href="{{ route('home') }}">
         <img src="{{ URL('img/logo/logo.png') }}" alt="Logo"/>
         <span>Aulia Citra Lestari</span>
       </a>
 
-      <div class="navigator {{ $class }}">
+      <div class="navigator">
         <ul>
           <li>
             <a href="{{ route('home') }}">
@@ -28,7 +28,7 @@ if (Route::current()->getName() == 'home') {
 
           <li class="relative">
             <a href="">
-              About
+              Tentang Kami
               <span class="dropable-icon">
                 <i class="fas fa-angle-down"></i>
               </span>
@@ -123,9 +123,9 @@ if (Route::current()->getName() == 'home') {
         </ul>
       </div>
 
-      <div class="menu-functions {{ $class }}">
+      <div class="menu-functions">
         <a class="menu-icon -search" href="#">
-          <img src="{{ URL('fe/images/header/search-icon' .$class. '.png') }}" alt="Search icon" />
+          <img src="{{ URL('fe/images/header/search-icon.png') }}" alt="Search icon" />
         </a>
 
         <div class="search-box">

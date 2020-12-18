@@ -24,7 +24,7 @@
 
                 <li class="relative">
                   <a class="dropdown-menu-controller" href="#">
-                    About
+                    Tentang Kami
                     <span class="dropable-icon">
                       <i class="fas fa-angle-down"></i>
                     </span>

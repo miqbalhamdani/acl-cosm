@@ -40,7 +40,7 @@
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4">
           <div class="footer__section -info">
-            <h5 class="footer-title">Contact info</h5>
+            <h5 class="footer-title">Kontak info</h5>
             <p>Address: <br>
               <span>
                 Gg. Inonkailan No.86, Mustikasari,  <br>
