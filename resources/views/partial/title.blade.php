@@ -5,7 +5,7 @@
     <ul>
       @if(@$breadcrumbs)
       @foreach ($breadcrumbs as $key => $item)
-      <li class="
+      <li class="mb-3
         @if ($key == count($breadcrumbs) - 1)
           active
         @endif

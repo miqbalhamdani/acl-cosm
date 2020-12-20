@@ -25,7 +25,7 @@
 
       <div class="col-12 col-md-6">
         <div class="introduction-three__content">
-          <h5>About Aulia Citra Lestari</h5>
+          <h5>Tentang Aulia Citra Lestari</h5>
 
           <h3>
             <span>Ingin punya bisnis kosmetik sendiri? Tentu Bisa!</span>

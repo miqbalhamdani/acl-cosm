@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-12 col-md-6">
         <h3 class="contact-title">
-          Contact info
+          Kontak info
         </h3>
 
         <div class="contact-info__item">
@@ -16,7 +16,7 @@
           </div>
 
           <div class="contact-info__item__detail">
-            <h3>Address</h3>
+            <h3>Alamat</h3>
             <p>Gg. Inonkailan No.86, Mustikasari,  <br>
               Kec. Mustika Jaya, Kota Bekasi, <br>
               Jawa Barat 17157</p>
@@ -29,7 +29,7 @@
           </div>
 
           <div class="contact-info__item__detail">
-            <h3>Phone</h3>
+            <h3>Telepon</h3>
             <p>(021) 82651283</p>
           </div>
         </div>
@@ -40,7 +40,7 @@
           </div>
 
           <div class="contact-info__item__detail">
-            <h3>Email</h3>
+            <h3>E-mail</h3>
             <p>cosm_acl@yahoo.com</p>
           </div>
         </div>

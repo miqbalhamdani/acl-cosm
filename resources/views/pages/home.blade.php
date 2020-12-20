@@ -6,9 +6,11 @@
 
 {{-- <x-home.card /> --}}
 
-<x-home.about />
+@include('components.home.top-product',
+  ['topProducts' => $topProducts]
+)
 
-@include('components.home.top-product', ['topProducts' => $topProducts])
+<x-home.about />
 
 <x-home.testimonial />
 

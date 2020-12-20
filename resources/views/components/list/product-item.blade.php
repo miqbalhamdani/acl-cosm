@@ -12,7 +12,7 @@
       @if (count($item->all_photos) < 1)
         <img
           src="{{ URL('img/no-image.png') }}"
-          style="max-height: 265px; min-height: 262px;"
+          style="min-height: 262px;"
           alt="Product image"
         />
       @endif
@@ -31,7 +31,7 @@
 
         <img
           src="{{ URL($imageOne) }}"
-          style="max-height: 265px; min-height: 262px;"
+          style="min-height: 262px;"
           alt="Product image"
         />
       @endif
@@ -47,14 +47,14 @@
         @if (File::isFile($path . $item->all_photos[1]))
         <img
           src="{{ URL($path . $item->all_photos[1]) }}"
-          style="max-height: 265px; min-height: 262px;"
+          style="min-height: 262px;"
           alt="Product image"
         />
         @endif
 
         <img
           src="{{ URL($imageTwo) }}"
-          style="max-height: 265px; min-height: 262px;"
+          style="min-height: 262px;"
           alt="Product image"
         />
       @endif

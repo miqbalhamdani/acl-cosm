@@ -47,7 +47,7 @@
           aria-labelledby="top-product-{{ $index }}-tab"
         >
           @foreach ($item->list_product as $product)
-          <div class="col-6 col-md-4 col-lg-3 px-1 px-lg-3">
+          <div class="col-sm-12 col-md-4 col-lg-3 px-1 px-lg-3">
             @include('components.list.product-item', ['item' => $product])
           </div>
           @endforeach
