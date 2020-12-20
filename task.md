@@ -11,9 +11,9 @@
 - Brush script
 
 ## NEW TASK
-1. [ ] fix mobile style design
+1. [x] fix mobile style design
 2. [x] auto slide banner home
-3. [ ] banner homepage set to small in mobile
+3. [x] banner homepage set to small in mobile
 4. [x] select item in PDP style
 5. [ ] contact in footer and contact page
 6. [x] hide register

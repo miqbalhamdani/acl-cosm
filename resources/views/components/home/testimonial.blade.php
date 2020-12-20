@@ -8,60 +8,48 @@
     <div class="testimonial-slider">
       <div class="row">
 
-        <div class="col testimonial-card">
+        @php
+          $testimonials = array(
+            array(
+                'img' => 'Picture1.png',
+                'title' => 'CPKB',
+                'desc' => 'Kami telah tersertifikasi CPKB (Cara Pembuatan Kosmetik yang Baik) oleh BPOM sehingga kami dapat dipercaya  untuk memproduksi kosmetik yang berkualitas.'
+            ),
+            array(
+                'img' => 'Picture2.png',
+                'title' => 'HALAL MUI',
+                'desc' => 'PT Aulia Citra Lestari juga telah memiliki sertifikat Halal MUI. Proses pemilihan bahan hingga kualitas produk jadi yang kami hasilkan sudah pasti kehalalannya.'
+            ),
+            array(
+                'img' => 'Picture3.png',
+                'title' => 'LEGALITAS',
+                'desc' => 'Perusahaan kami dapat membantu dan memberikan konsultasi dalam proses perolehan izin BPOM, HKI, dan Halal.'
+            ),
+            array(
+                'img' => 'Picture4.png',
+                'title' => 'FORMULA',
+                'desc' => 'Kami memiliki bank formula yang dapat disesuaikan dengan kriteria produk impian Anda serta konsultasi oleh tim kami.'
+            ),
+            array(
+                'img' => 'Picture5.png',
+                'title' => 'TEAM',
+                'desc' => 'Kerja sama yang baik dalam team kami memberikan lingkungan yang efisien sehingga dapat mempermudah proses.'
+            ),
+        );;
+        @endphp
+
+        @foreach ($testimonials as $item)
+        <div class="col-sm-12 col-md-6 col-lg-auto testimonial-card">
           <div class="testimonial-image">
-            <img src="{{ URL('img/keunggulan-kami/Picture1.png') }}">
+            <img src="{{ URL('img/keunggulan-kami/'. $item['img']) }}">
           </div>
 
           <div class="testimonial-content text-center">
-            <h3>CPKB</h3>
-            <p>Kami telah tersertifikasi CPKB (Cara Pembuatan Kosmetik yang Baik) oleh BPOM sehingga kami dapat dipercaya  untuk memproduksi kosmetik yang berkualitas.</p>
+            <h3>{{ $item['title'] }}</h3>
+            <p>{{ $item['desc'] }}</p>
           </div>
         </div>
-
-        <div class="col testimonial-card">
-          <div class="testimonial-image">
-            <img src="{{ URL('img/keunggulan-kami/Picture2.png') }}">
-          </div>
-
-          <div class="testimonial-content text-center">
-            <h3>HALAL MUI</h3>
-            <p>PT Aulia Citra Lestari juga telah memiliki sertifikat Halal MUI. Proses pemilihan bahan hingga kualitas produk jadi yang kami hasilkan sudah pasti kehalalannya.</p>
-          </div>
-        </div>
-
-        <div class="col testimonial-card">
-          <div class="testimonial-image">
-            <img src="{{ URL('img/keunggulan-kami/Picture3.png') }}">
-          </div>
-
-          <div class="testimonial-content text-center">
-            <h3>LEGALITAS</h3>
-            <p>Perusahaan kami dapat membantu dan memberikan konsultasi dalam proses perolehan izin BPOM, HKI, dan Halal.</p>
-          </div>
-        </div>
-
-        <div class="col testimonial-card">
-          <div class="testimonial-image">
-            <img src="{{ URL('img/keunggulan-kami/Picture4.png') }}">
-          </div>
-
-          <div class="testimonial-content text-center">
-            <h3>FORMULA</h3>
-            <p>Kami memiliki bank formula yang dapat disesuaikan dengan kriteria produk impian Anda serta konsultasi oleh tim kami.</p>
-          </div>
-        </div>
-
-        <div class="col testimonial-card">
-          <div class="testimonial-image">
-            <img src="{{ URL('img/keunggulan-kami/Picture5.png') }}">
-          </div>
-
-          <div class="testimonial-content text-center">
-            <h3>TEAM</h3>
-            <p>Kerja sama yang baik dalam team kami memberikan lingkungan yang efisien sehingga dapat mempermudah proses.</p>
-          </div>
-        </div>
+        @endforeach
 
       </div>
     </div>
