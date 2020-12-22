@@ -64,6 +64,8 @@
 
       @yield('content')
 
+      @include('partial.whatsapp')
+
       @include('partial.footer')
 
       @include('partial.navbar-mobile')

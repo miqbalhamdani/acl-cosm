@@ -42,6 +42,7 @@
           <div class="contact-info__item__detail">
             <h3>E-mail</h3>
             <p>cosm_acl@yahoo.com</p>
+            <p>aclcosm.marketing@gmail.com</p>
           </div>
         </div>
 

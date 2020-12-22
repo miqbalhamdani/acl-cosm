@@ -51,7 +51,10 @@
 
             <p>Phone:<span>(021) 82651283</span></p>
 
-            <p>Email:<span>cosm_acl@yahoo.com</span></p>
+            <p>Email: <br>
+              <span>cosm_acl@yahoo.com</span> <br>
+              <span>aclcosm.marketing@gmail.com</span>
+            </p>
           </div>
         </div>
 

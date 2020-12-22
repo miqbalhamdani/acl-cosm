@@ -172,3 +172,24 @@
 .contact .ask-question .closebtn:hover {
   color: black;
 }
+
+/* STICKY WHATSAPP */
+#whatsapp-wrapper {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background-color: #0add35;
+  padding: 7px 20px 5px 15px;
+  border-radius: 30px;
+}
+#whatsapp-wrapper a {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+#whatsapp-wrapper a img {
+  width: 30px;
+}
