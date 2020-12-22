@@ -151,3 +151,24 @@
   line-height: 1.625em;
   margin-top: 1rem;
 }
+
+/* SUCCESS NOTIFICATION SEND EMAIL */
+.contact .ask-question .success-alert {
+  padding: 20px;
+  background-color: #62983f; /* green  */
+  color: white;
+  margin-bottom: 30px;
+}
+.contact .ask-question .closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.contact .ask-question .closebtn:hover {
+  color: black;
+}

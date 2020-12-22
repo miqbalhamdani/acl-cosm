@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('fe/css/jquery.modal.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('fe/css/bootstrap-drawer.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('fe/css/style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('fe/css/custom.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('fe/css/custom.css?v=1.0.1')}}">
     <!--endbuild-->
 
     <!-- BEGIN: Laravel Vue-->

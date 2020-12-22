@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\AskQuestion;
 use App\Repositories\ProductRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\CustomRepository;
@@ -108,12 +109,27 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function contact()
+    public function contact(Request $request)
     {
         $breadcrumbs = [
             'Home',
             'Contact us',
         ];
+
+        if ($request->isMethod('post')) {
+            $payload = [
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'title' => $request->input('title'),
+                'message' => $request->input('message'),
+            ];
+
+            \Mail::to(env('MAIL_USERNAME'))
+                ->send(new AskQuestion($payload));
+
+            return redirect('/contact/')
+                ->with('success_message', 'E-mail berhasil di kirimkan.');
+        }
 
         $data = [
             'title' => 'Contact',
