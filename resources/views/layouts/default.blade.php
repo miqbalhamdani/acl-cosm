@@ -33,7 +33,7 @@
 		<!-- Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;700;900&amp;display=swap"/>
 
-    @if (Route::current()->getName() == 'home')
+    @if (Route::currentRouteName() == 'home')
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     @endif
 
@@ -58,7 +58,7 @@
     @include('partial.navbar')
 
     <div id="app">
-      @if (Route::current()->getName() != 'home')
+      @if (Route::currentRouteName() != 'home')
         @include('partial.title')
       @endif
 

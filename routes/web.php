@@ -90,4 +90,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']] , function()
     Route::post('top-product/edit/{id}', 'TopProductController@store');
     Route::get('top-product/delete/{id}', 'TopProductController@destroy');
 
+    /*
+    |--------------------------------------------------------------------------
+    | ASK QUESTIONS
+    |--------------------------------------------------------------------------
+    */
+    Route::get('ask-questions', 'AskQuestionController@index');
+    Route::get('ask-question/{id}', 'AskQuestionController@show');
+
 });
