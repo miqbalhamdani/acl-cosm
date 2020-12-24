@@ -29,6 +29,7 @@ Route::get('/company-profile', 'FrontendController@companyProfile')->name('compa
 Route::get('/sertifikasi', 'FrontendController@sertifikat')->name('sertifikasi');
 Route::get('/layanan', 'FrontendController@layanan')->name('layanan');
 Route::get('/contact', 'FrontendController@contact')->name('contact');
+Route::post('/contact', 'FrontendController@contact');
 
 // dashboard Routes
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']] , function()
@@ -88,5 +89,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']] , function()
     Route::get('top-product/edit/{id}', 'TopProductController@store');
     Route::post('top-product/edit/{id}', 'TopProductController@store');
     Route::get('top-product/delete/{id}', 'TopProductController@destroy');
+
+    /*
+    |--------------------------------------------------------------------------
+    | ASK QUESTIONS
+    |--------------------------------------------------------------------------
+    */
+    Route::get('ask-questions', 'AskQuestionController@index');
+    Route::get('ask-question/{id}', 'AskQuestionController@show');
 
 });

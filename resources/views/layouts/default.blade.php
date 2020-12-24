@@ -33,7 +33,7 @@
 		<!-- Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;700;900&amp;display=swap"/>
 
-    @if (Route::current()->getName() == 'home')
+    @if (Route::currentRouteName() == 'home')
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     @endif
 
@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('fe/css/jquery.modal.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('fe/css/bootstrap-drawer.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('fe/css/style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('fe/css/custom.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('fe/css/custom.css?v=1.0.1')}}">
     <!--endbuild-->
 
     <!-- BEGIN: Laravel Vue-->
@@ -58,11 +58,13 @@
     @include('partial.navbar')
 
     <div id="app">
-      @if (Route::current()->getName() != 'home')
+      @if (Route::currentRouteName() != 'home')
         @include('partial.title')
       @endif
 
       @yield('content')
+
+      @include('partial.whatsapp')
 
       @include('partial.footer')
 

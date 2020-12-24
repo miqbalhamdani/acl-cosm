@@ -42,6 +42,7 @@
           <div class="contact-info__item__detail">
             <h3>E-mail</h3>
             <p>cosm_acl@yahoo.com</p>
+            <p>aclcosm.marketing@gmail.com</p>
           </div>
         </div>
 
@@ -79,18 +80,33 @@
         </div>
       </div>
 
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6 ask-question">
+        @if (@session('success_message'))
+          <div class="success-alert">
+            <span
+              class="closebtn"
+              onclick="this.parentElement.style.display='none';"
+            >
+              &times;
+            </span>
+            {{ session('success_message') }}
+          </div>
+        @endif
+
         <h3 class="contact-title">
           Ask a question
         </h3>
 
         <div class="contact-form">
-          <form>
+          <form method="POST" action="{{ URL('contact') }}">
+            {{ csrf_field() }}
+
             <div class="input-validator">
               <input
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder="Nama"
+                required
               />
             </div>
 
@@ -99,6 +115,16 @@
                 type="text"
                 name="email"
                 placeholder="Email"
+                required
+              />
+            </div>
+
+            <div class="input-validator">
+              <input
+                type="text"
+                name="title"
+                placeholder="Judul"
+                required
               />
             </div>
 
@@ -106,15 +132,16 @@
               <textarea
                 name="message"
                 id="" cols="30"
-                rows="3"
-                placeholder="Message"
+                rows="4"
+                placeholder="Pesan"
+                required
               >
               </textarea>
             </div>
 
-            <a class="btn -dark" href="#">
-              SEND MESSAGE
-            </a>
+            <button type="submit" class="btn -dark">
+              Kirim Pesan
+            </button>
           </form>
         </div>
       </div>

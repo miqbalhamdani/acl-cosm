@@ -3,21 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\AskQuestion;
 use App\Repositories\ProductRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\CustomRepository;
+use App\Repositories\AskQuestionRepository;
 
 class FrontendController extends Controller
 {
     public function __construct(
         ProductRepository $product,
         CategoryRepository $category,
-        CustomRepository $custom
+        CustomRepository $custom,
+        AskQuestionRepository $askQuestion
     )
     {
         $this->model = $product;
         $this->category = $category;
         $this->custom = $custom;
+        $this->askQuestion = $askQuestion;
     }
 
     /**
@@ -108,12 +112,29 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function contact()
+    public function contact(Request $request)
     {
         $breadcrumbs = [
             'Home',
             'Contact us',
         ];
+
+        if ($request->isMethod('post')) {
+            $data = [
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'title' => $request->input('title'),
+                'message' => $request->input('message'),
+            ];
+
+            $insert = $this->askQuestion->create($data);
+
+            // \Mail::to('iqbal.hamdani@misteraladin.com')
+            //     ->send(new AskQuestion($payload));
+
+            return redirect('/contact/')
+                ->with('success_message', 'Pesan berhasil di kirimkan.');
+        }
 
         $data = [
             'title' => 'Contact',

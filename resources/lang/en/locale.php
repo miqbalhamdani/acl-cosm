@@ -5,6 +5,7 @@ return [
   "Brand" => "Brand",
   "Product" => "Product",
   "Top Product" => "Top Product",
+  "Ask Question" => "Ask Question",
   "eCommerce" => "eCommerce",
   "Analytics" => "Analytics",
   "Apps" => "Apps",

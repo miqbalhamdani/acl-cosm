@@ -29,6 +29,12 @@
       "name": "Top Product",
       "i18n": "Top Product",
       "icon": "gift"
+    },
+    {
+      "url": "/admin/ask-questions",
+      "name": "Ask Question",
+      "i18n": "Ask Question",
+      "icon": "comment"
     }
   ]
 }

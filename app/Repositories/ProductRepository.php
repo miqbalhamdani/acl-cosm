@@ -69,6 +69,30 @@ class ProductRepository extends AbstractRepository implements ProductInterface
 
         $data = $data->paginate($perpage);
 
+        if (!empty($category)) {
+            $data->appends([
+                'category' => $category,
+            ]);
+        }
+
+        if (!empty($brands)) {
+            $data->appends([
+                'brands' => $brands,
+            ]);
+        }
+
+        if (!empty($name)) {
+            $data->appends([
+                'name' => $name,
+            ]);
+        }
+
+        if (!empty($sort)) {
+            $data->appends([
+                'sort' => $sort,
+            ]);
+        }
+
         return $data;
     }
 
