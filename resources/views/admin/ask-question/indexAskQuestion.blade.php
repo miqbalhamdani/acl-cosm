@@ -6,6 +6,20 @@
 
 <section id="admin-ask-questions-form">
   <div class="col-md-12 col-12">
+    @if (@session('success_message'))
+    <div class="alert alert-success alert-dismissible mb-2" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+      <div class="d-flex align-items-center">
+        <i class="bx bx-like"></i>
+        <span>
+          {{ session('success_message') }}
+        </span>
+      </div>
+    </div>
+    @endif
+
     <div class="card">
       <div class="card-header d-flex justify-content-between">
         <h4 class="card-title">{{ $title }}</h4>
@@ -30,7 +44,7 @@
                       href="{{ URL('/admin/ask-question/'. $item->id) }}"
                       style="color: #475F7B;"
                     >
-                      <h5>{{ $item->title }}</h5>
+                      <h5>{{ $item->title }} {!! $item->status_html !!}</h5>
                       {{ $item->name }} | {{ $item->email }} <br />
                       <p
                         style="
@@ -46,13 +60,25 @@
                   </td>
 
                   <td class="w-150">
-                    @if (true)
+                    @if ($item->status != 1)
                     <a href="{{ URL('/admin/ask-question/read/'. $item->id) }}">
-                      <i class="badge-circle badge-circle-secondary bx bx-conversation font-medium-1"></i>
+                      <i
+                        class="badge-circle badge-circle-secondary bx bx-conversation font-medium-1"
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                        title=""
+                        data-original-title="Tandai sebagai telah dibaca"
+                      ></i>
                     </a>
                     @else
                     <a href="{{ URL('/admin/ask-question/unread/'. $item->id) }}">
-                      <i class="badge-circle badge-circle-secondary bx bx-message font-medium-1"></i>
+                      <i
+                        class="badge-circle badge-circle-secondary bx bx-message font-medium-1"
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                        title=""
+                        data-original-title="Tandai sebagai belum dibaca"
+                      ></i>
                     </a>
                     @endif
 
