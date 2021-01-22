@@ -18,6 +18,7 @@
               <thead>
                 <tr>
                   <th>{{ $title }}</th>
+                  <th></th>
                 </tr>
               </thead>
 
@@ -41,6 +42,22 @@
                       ">
                         {!! $item->message !!}
                       </p>
+                    </a>
+                  </td>
+
+                  <td class="w-150">
+                    @if (true)
+                    <a href="{{ URL('/admin/ask-question/read/'. $item->id) }}">
+                      <i class="badge-circle badge-circle-secondary bx bx-conversation font-medium-1"></i>
+                    </a>
+                    @else
+                    <a href="{{ URL('/admin/ask-question/unread/'. $item->id) }}">
+                      <i class="badge-circle badge-circle-secondary bx bx-message font-medium-1"></i>
+                    </a>
+                    @endif
+
+                    <a href="#" onclick="deleteItem('/admin/ask-question', {{ $item->id }})">
+                      <i class="badge-circle badge-circle-secondary bx bx-trash font-medium-1"></i>
                     </a>
                   </td>
                 </tr>

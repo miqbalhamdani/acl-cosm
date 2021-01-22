@@ -48,4 +48,16 @@ class AskQuestionController extends Controller
 
         return view('admin.ask-question.showAskQuestion', $data);
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $this->model->destroy($id);
+        return \Response::json();
+    }
 }

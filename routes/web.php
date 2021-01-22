@@ -97,5 +97,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']] , function()
     */
     Route::get('ask-questions', 'AskQuestionController@index');
     Route::get('ask-question/{id}', 'AskQuestionController@show');
+    Route::get('ask-question/read/{id}', 'AskQuestionController@read');
+    Route::get('ask-question/unread/{id}', 'AskQuestionController@unread');
+    Route::get('ask-question/delete/{id}', 'AskQuestionController@destroy');
 
 });
