@@ -48,4 +48,50 @@ class AskQuestionController extends Controller
 
         return view('admin.ask-question.showAskQuestion', $data);
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function read($id)
+    {
+        $data = [
+            'status' => 1,
+        ];
+
+        $insert = $this->model->update($id, $data);
+        $message = 'pesan ditandai sebagai sudah dibaca';
+
+        return redirect('/admin/ask-questions/')->with('success_message', $message);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function unread($id)
+    {
+        $data = [
+            'status' => 0,
+        ];
+
+        $insert = $this->model->update($id, $data);
+        $message = 'pesan ditandai sebagai belum dibaca';
+
+        return redirect('/admin/ask-questions/')->with('success_message', $message);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $this->model->destroy($id);
+        return \Response::json();
+    }
 }

@@ -36,4 +36,28 @@ class AskQuestion extends Model
     * @var array
     */
     protected $dates = ['created_at', 'updated_at'];
+
+
+    /**
+    * The attributes that are appends.
+    *
+    * @var array
+    */
+    protected $appends = [
+        'status_html',
+    ];
+
+    /**
+    * Get Unit Kerja from db units.
+    *
+    * @return string
+    */
+    public function getStatusHtmlAttribute()
+    {
+        if ($this->status != 1) {
+            return '<div class="badge badge-pill badge-light-secondary mr-1">belum dibaca</div>';
+        }
+
+        return '<div class="badge badge-pill badge-light-success mr-1">telah dibaca</div>';
+    }
 }
